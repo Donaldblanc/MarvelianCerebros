@@ -1,0 +1,30 @@
+{
+  "name": "marveliancerebros",
+  "version": "1.0.0",
+  "description": "Project 2 the expansion of project 1",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon ./app/server.js --exec babel-node -e",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Donaldblanc/MarvelianCerebros.git"
+  },
+  "author": "Donald Blanc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Donaldblanc/MarvelianCerebros/issues"
+  },
+  "homepage": "https://github.com/Donaldblanc/MarvelianCerebros#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.15.0",
+    "nodemon": "^1.17.5"
+  }
+}
