@@ -84,7 +84,7 @@ var displayMovie = (search,cb) =>{
  console.log(KEYS)
 // var marvel = new Marvel({ publicKey: KEYS.marvel.public_key, privateKey: KEYS.marvel.private_key})
 
-var marvel = new Marvel({ publicKey: "<pubKey>", privateKey: "<privateKey>"})
+var marvel = new Marvel({ publicKey: KEYS.marvel.public_key, privateKey: KEYS.marvel.private_key})
  
 marvel.characters
   .name("Hulk")
