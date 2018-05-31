@@ -5,8 +5,6 @@ import Marvel from "marvel";
 import request from "request";//added request for working on OMDB API
 
 const KEYS = require('../keys.js');
-export default function (app){
-//Marvel movies
 const movies = ["Howard the Duck", "The Punisher ", "Captain America", "The Fantastic Four", "Blade",
   "X-Men","Blade II","Spider-Man","Daredevil","Hulk","Spider-Man 2","Blade: Trinity","Elektra","Man-Thing","Fantastic Four",
   "X-Men: The Last Stand","Ghost Rider","Spider-Man 3","Rise of the Silver Surfer","Iron Man","The Incredible Hulk",
@@ -15,6 +13,9 @@ const movies = ["Howard the Duck", "The Punisher ", "Captain America", "The Fant
   "Captain America: The Winter Soldier","The Amazing Spider-Man 2","X-Men: Days of Future Past","Guardians of the Galaxy",
   "Big Hero 6","Avengers: Age of Ultron","Ant-Man","Deadpool","Captain America: Civil War","X-Men: Apocalypse",
   "Doctor Strange","Logan","Guardians of the Galaxy Vol. 2","Spider-Man: Homecoming","Thor: Ragnarok","Black Panther"];
+
+export default function (app){
+//Marvel movies
 // marvel API calls
 const apiAuth = "&ts=1&apikey=0c59a3c44e014ddc1ffcdf3ff74fc90f&hash=a6c84b3cc66e3a92494635469be8bd74";
 const marvURL = "https://gateway.marvel.com/v1/public/";
@@ -23,8 +24,9 @@ var name = "spider-man";
 var charId = "";
 var queryURL = marvURL + charSearch + name + apiAuth;
     //first route taken once page is opened
-    app.get("/",(request,response) => { 
-       displayMovie(queryURL , function (results ){ 
+    app.get("/api/getMovies",(request,response) => { 
+    // let queryURL = 
+       displayMovie( function (results ){ 
         console.log("Movie information: " + results) 
             response.json(results);
         });
@@ -68,13 +70,14 @@ function getCharacters(search, cb) {
 }//getQuery
   
 //function for displaying movies through request
-var displayMovie = (search,cb) =>{
+var displayMovie = (cb) =>{
     for (let i = 0 ; i < movies.length ; i++){
         let movieName = movies[i].toString();
         let queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
         request(queryUrl, function(error, response, body) {
-            if (!error && response.statusCode === 200) {              
-                cb(response)
+            if (!error && response.statusCode === 200) { 
+                console.log(response.Title);             
+                cb(response.Title)
             //   console.log("Release Year: " + JSON.parse(body).Year);
             }
           });
@@ -84,11 +87,11 @@ var displayMovie = (search,cb) =>{
  console.log(KEYS)
 // var marvel = new Marvel({ publicKey: KEYS.marvel.public_key, privateKey: KEYS.marvel.private_key})
 
-var marvel = new Marvel({ publicKey: KEYS.marvel.public_key, privateKey: KEYS.marvel.private_key})
+// var marvel = new Marvel({ publicKey: KEYS.marvel.public_key, privateKey: KEYS.marvel.private_key})
  
-marvel.characters
-  .name("Hulk")
-  .get(function(err, resp) {
-    if (err) { console.log("Error: ", err) }
-    else { console.log(resp) }
-  })
+// marvel.characters
+//   .name("Hulk")
+//   .get(function(err, resp) {
+//     if (err) { console.log("Error: ", err) }
+//     else { console.log(resp) }
+//   })
