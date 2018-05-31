@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <div id="nav">
-      <p>this is from the App component</p>
       <router-link to="/">Home</router-link> |
       <router-link to="about">About</router-link> |
       <router-link to="test">Test</router-link>
@@ -13,12 +12,15 @@
 </template>
 
 <style>
+body {
+  background-color: rgb(39, 51, 68);
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: rgb(117, 132, 146);
 }
 #nav {
   padding: 30px;
