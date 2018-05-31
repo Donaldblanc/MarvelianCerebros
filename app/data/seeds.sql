@@ -54,3 +54,18 @@ INSERT INTO movieCharacters (movies,characters) VALUES ("Ghost Rider","Johnny Bl
 
 --Elektra:
 INSERT INTO movieCharacters (movies,characters) VALUES ("Elektra","Typhoid Mary"), ("Elektra","Stick"), ("Elektra","Tattoo"), ("Elektra","Typhoid Mary"), ("Elektra","Elektra");
+
+--Fantastic Four:
+INSERT INTO movieCharacters (movies,characters) VALUES ("Fantastic Four","Johnny Storm"), ("Fantastic Four","Sue Storm"), ("Fantastic Four","Victor Von Doom"),
+("Fantastic Four", "Alicia Masters"), ("Fantastic Four","Ben Grimm"), ("Fantastic Four","Victor Von Doom"), ("Fantastic Four","Doctor Doom"), ("Fantastic Four","Ben Grimm")
+,("Fantastic Four", "Johnny Storm"), ("Fantastic Four","Invisible Woman"), ("Fantastic Four","Sue Storm"), ("Fantastic Four","Mr. Fantastic"), ("Fantastic Four","Human Torch");
+
+--Spider-Man 3:
+INSERT INTO movieCharacters (movies,characters) VALUES ("Spider-Man 3","Peter Parker"), ("Spider-Man 3","Mary Jane Watson"), ("Spider-Man 3","Harry Osborn"),
+("Spider-Man 3", "May Parker"), ("Spider-Man 3","J. Jonah Jameson"), ("Spider-Man 3","Peter Parker"), ("Spider-Man 3","Eddie Brock"),("Spider-Man 3", "Sandman"),
+("Spider-Man 3", "Eddie Brock"), ("Spider-Man 3","Harry Osborn"), ("Spider-Man 3","New Goblin"), ("Spider-Man 3","Spider-Man");
+
+--X-Men Origins:
+INSERT INTO movieCharacters (movies,characters) VALUES ("X-Men Origins","Logan"), ("X-Men Origins","John Wraith"), ("X-Men Origins","Logan"), ("X-Men Origins","Cyclops"),
+("X-Men Origins", "Agent Zero"), ("X-Men Origins","Blob"), ("X-Men Origins","John Wraith"), ("X-Men Origins","Sabretooth"), ("X-Men Origins","Silver Fox"), 
+("X-Men Origins","Weapon X"), ("X-Men Origins","Wolverine"), ("X-Men Origins","Deadpool");
