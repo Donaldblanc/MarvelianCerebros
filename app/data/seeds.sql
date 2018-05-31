@@ -69,3 +69,9 @@ INSERT INTO movieCharacters (movies,characters) VALUES ("Spider-Man 3","Peter Pa
 INSERT INTO movieCharacters (movies,characters) VALUES ("X-Men Origins","Logan"), ("X-Men Origins","John Wraith"), ("X-Men Origins","Logan"), ("X-Men Origins","Cyclops"),
 ("X-Men Origins", "Agent Zero"), ("X-Men Origins","Blob"), ("X-Men Origins","John Wraith"), ("X-Men Origins","Sabretooth"), ("X-Men Origins","Silver Fox"), 
 ("X-Men Origins","Weapon X"), ("X-Men Origins","Wolverine"), ("X-Men Origins","Deadpool");
+
+-- X-Men: First Class:
+INSERT INTO movieCharacters (movies,characters) VALUES ("X-Men: First Class","Charles Xavier"),("X-Men: First Class", "Sebastian Shaw"), ("X-Men: First Class","Moira MacTaggert"),
+("X-Men: First Class", "Charles Xavier"), ("X-Men: First Class","Tempest"), ("X-Men: First Class","Banshee"), ("X-Men: First Class","Havok"), ("X-Men: First Class","Beast"),
+("X-Men: First Class", "Sebastian Shaw"), ("X-Men: First Class","Mystique"), ("X-Men: First Class","Magneto"), ("X-Men: First Class","Professor X"),
+("X-Men: First Class", "Emma Frost");
