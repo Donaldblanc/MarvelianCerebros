@@ -4,8 +4,8 @@ var orm = require("../data/orm.js");
 var movies = {
     allMovies: function (cb) {
         orm.allMovies("movies", "marvel_db.movieCharacters", function (res) {
-            console.log(res);
-            console.log(res.movies);
+            // console.log(res);
+            // console.log(res.movies);
             cb(res);
         });
     }
