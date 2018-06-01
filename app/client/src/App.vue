@@ -13,7 +13,7 @@
 
 <style>
 body {
-  background-color: rgb(39, 51, 68);
+  background-color: rgb(227, 231, 235);
 }
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -21,9 +21,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: rgb(117, 132, 146);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto
 }
 #nav {
   padding: 30px;
+  grid-row-start: 2;
+  grid-row-end: 13;
 }
 
 #nav a {
@@ -46,5 +51,9 @@ body {
 .fade-leave-active {
   transition: opacity 0.3s ease;
   opacity: 0;
+}
+.home {
+  grid-row-start: 4;
+  grid-row-end: 5;
 }
 </style>

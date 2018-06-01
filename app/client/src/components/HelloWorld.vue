@@ -7,22 +7,22 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   props: {
     msg: String,
-    msg2: String,
-  },
+    msg2: String
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1{
-  font-family: 'Bowlby One SC', cursive;
+<style>
+h1 {
+  font-family: "Bowlby One SC", cursive;
   color: crimson;
 }
-span{
-  font-family: 'Bowlby One SC', cursive;
+span {
+  font-family: "Bowlby One SC", cursive;
   color: rgb(86, 128, 128);
 }
 h3 {
