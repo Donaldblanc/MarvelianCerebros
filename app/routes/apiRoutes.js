@@ -18,7 +18,7 @@ export default function (app) {
     var queryURL = marvURL + charSearch + name + apiAuth;
     //first route taken once page is opened, function only gets a callback no query needed here
     app.get("/api/movies", (request, response) => {
-        moviesApi.displayMovie(function (results) {
+        moviesAPi.displayMovie(function (results) {
             console.log("Movie information: " + results)
             response.json(results);
         });

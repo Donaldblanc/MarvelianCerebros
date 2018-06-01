@@ -1,4 +1,4 @@
-var connection = require("../javascripts/connection.js");
+var connection = require("../data/connection.js");
 
 function printUserName(num) {
   var arr = [];
@@ -31,11 +31,12 @@ function objToSql(ob) {
 // Object for all our SQL statement functions.
 var orm = {
   allMovies: function (colName,table,cb) {
-    var queryString = "SELECT " + colName;
+    var queryString = "SELECT " + colName+",";
     queryString += " COUNT(*) AS C FROM " + table;
     queryString += " GROUP BY " + colName;
     queryString += " HAVING C > 1";
     queryString += " ORDER BY C DESC";
+    console.log("\n"+queryString);
     connection.query(queryString, function (err, result) {
       if (err) {
         throw err;
