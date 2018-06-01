@@ -1,19 +1,19 @@
 var connection = require("../javascripts/connection.js");
 
 function printUserName(num) {
-    var arr = [];
-  
-    for (var i = 0; i < num; i++) {
-      arr.push("");
-    }
-  
-    return arr.toString();
+  var arr = [];
+
+  for (var i = 0; i < num; i++) {
+    arr.push("");
   }
 
-  // Helper function to convert object key/value pairs to SQL syntax
+  return arr.toString();
+}
+
+// Helper function to convert object key/value pairs to SQL syntax
 function objToSql(ob) {
-    var arr = [];
-    // loop through the keys and push the key/value as a string int arr
+  var arr = [];
+  // loop through the keys and push the key/value as a string int arr
   for (var key in ob) {
     var value = ob[key];
     // check to skip hidden properties
@@ -24,84 +24,96 @@ function objToSql(ob) {
       }
       arr.push(key + "=" + value);
     }
-}
-    // translate array of strings to a single comma-separated string
+  }
+  // translate array of strings to a single comma-separated string
   return arr.toString();
 }
 // Object for all our SQL statement functions.
 var orm = {
-    all: function(tableInput,mm) {
-      var queryString = "SELECT * FROM " + tableInput + ";";
-      connection.query(queryString, function(err, result) {
-        if (err) {
-          throw err;
-        }
-        mm(result);
-      });
-    },
-    create: function(table, cols, vals, mm) {
-      var queryString = "INSERT INTO " + table;
-  
-      queryString += " (";
-      queryString += cols.toString();
-      queryString += ") ";
-      queryString += "VALUES (";
-      queryString += printQuestionMarks(vals.length);
-      queryString += ") ";
-  
-      console.log(queryString);
-  
-      connection.query(queryString, vals, function(err, result) {
-        if (err) {
-          throw err;
-        }
-  
-        mm(result);
-      });
-    },
-    // An example of objColVals would be {name: panther, sleepy: true}
-    update: function(table, cols, vals, mm) {
-        var queryString = "INSERT INTO " + table;
-    
-        queryString += " (";
-        queryString += cols.toString();
-        queryString += ") ";
-        queryString += "VALUES (";
-        queryString += printQuestionMarks(vals.length);
-        queryString += ") ";
-    
-        console.log(queryString);
-    
-        connection.query(queryString, vals, function(err, result) {
-          if (err) {
-            throw err;
-          }
-    
-          mm(result);
-        });
-      },
-    delete: function(table, cols,vals, mm) {
-        var queryString = "INSERT INTO " + table;
-    
-        queryString += " (";
-        queryString += cols.toString();
-        queryString += ") ";
-        queryString += "VALUES (";
-        queryString += printQuestionMarks(vals.length);
-        queryString += ") ";
-    
-        console.log(queryString);
-    
-        connection.query(queryString, vals, function(err, result) {
-          if (err) {
-            throw err;
-          }
-    
-          mm(result);
-        });
-      },
-  };
-  
-  // Export the orm object for the model (marvel.js).
-  module.exports = orm;
-  
+  allMovies: function (colName,table,cb) {
+    var queryString = "SELECT " + colName;
+    queryString += " COUNT(*) AS C FROM " + table;
+    queryString += " GROUP BY " + colName;
+    queryString += " HAVING C > 1";
+    queryString += " ORDER BY C DESC";
+    connection.query(queryString, function (err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
+  all: function (tableInput, mm) {
+    var queryString = "SELECT * FROM " + tableInput + ";";
+    connection.query(queryString, function (err, result) {
+      if (err) {
+        throw err;
+      }
+      mm(result);
+    });
+  },
+  create: function (table, cols, vals, mm) {
+    var queryString = "INSERT INTO " + table;
+
+    queryString += " (";
+    queryString += cols.toString();
+    queryString += ") ";
+    queryString += "VALUES (";
+    queryString += printQuestionMarks(vals.length);
+    queryString += ") ";
+
+    console.log(queryString);
+
+    connection.query(queryString, vals, function (err, result) {
+      if (err) {
+        throw err;
+      }
+
+      mm(result);
+    });
+  },
+  // An example of objColVals would be {name: panther, sleepy: true}
+  update: function (table, cols, vals, mm) {
+    var queryString = "INSERT INTO " + table;
+
+    queryString += " (";
+    queryString += cols.toString();
+    queryString += ") ";
+    queryString += "VALUES (";
+    queryString += printQuestionMarks(vals.length);
+    queryString += ") ";
+
+    console.log(queryString);
+
+    connection.query(queryString, vals, function (err, result) {
+      if (err) {
+        throw err;
+      }
+
+      mm(result);
+    });
+  },
+  delete: function (table, cols, vals, mm) {
+    var queryString = "INSERT INTO " + table;
+
+    queryString += " (";
+    queryString += cols.toString();
+    queryString += ") ";
+    queryString += "VALUES (";
+    queryString += printQuestionMarks(vals.length);
+    queryString += ") ";
+
+    console.log(queryString);
+
+    connection.query(queryString, vals, function (err, result) {
+      if (err) {
+        throw err;
+      }
+
+      mm(result);
+    });
+  },
+};
+
+// Export the orm object for the model (marvel.js).
+module.exports = orm;
