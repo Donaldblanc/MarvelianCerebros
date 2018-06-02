@@ -44,6 +44,49 @@ export default function (app) {
         });
 
 
+
     });
+
+            });
+
+            app.get("/api/character/:character?", (request, response) =>{
+                let mChar = request.params.character;
+                    
+                    if(mChar != null){
+                        marvelAPi.character(mChar, function(results){ 
+                            console.log("the results: " + results) 
+                            response.json(results);
+                        });
+                
+                }else{
+                    marvelAPi.character("Hulk", function(results){ 
+                        console.log("the results: " + results) 
+                            response.json(results);
+                        });
+                }
+                
+            });
+
+            app.get("/api/comics/:comicId?", (request, response) =>{
+
+                let comic = request.params.comicId;
+                //console.log(comic);
+                if(comic != null){
+                    marvelAPi.comics(comic, function(results){
+                        // console.log("comics results: " + results) 
+                         response.json(results);
+                      });
+
+                }
+                else{
+                    marvelAPi.comics('1009351', function(results){
+                        // console.log("comics results: " + results) 
+                         response.json(results);
+                         });
+                }
+
+                 
+           
+            });
 
 }// export default 

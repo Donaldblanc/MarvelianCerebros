@@ -5,7 +5,6 @@ import Marvel from "marvel";
 const KEYS = require('../keys.js');
 var marvel = new Marvel({ publicKey: KEYS.marvel.public_key, privateKey: KEYS.marvel.private_key})
 
-
 let marvelApi = { 
     testCharacter: function (search, cb) {
        
@@ -31,14 +30,27 @@ let marvelApi = {
             .get(function(err, resp) {
                 if (err) { console.log("Error: ", err) 
                  }
-                else { console.log(resp); 
+                else { //console.log(resp); 
                    
                     cb(resp); 
                 }
             })
-    }           
+    },
+    comics: function(id, cb){
+        //sharedAppearances
+        //id: 1009351 : name hull
+        marvel.comics
+         .sharedAppearances([id])
+         .get(function(err, resp) {
+            if (err) { console.log("Error: ", err) 
+             }
+            else { //console.log(resp); 
+               
+                cb(resp); 
+            }
+        })
 
-
+    }          
 }
 
 export default marvelApi ;
