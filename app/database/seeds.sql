@@ -149,7 +149,7 @@ INSERT INTO movieCharacters (movies,characters) VALUES ("X-Men: Apocalypse","Cha
 -- Captain America: Civil War:
 INSERT INTO movieCharacters (movies,characters) VALUES  ("Captain America: Civil War","Steve Rogers"), ("Captain America: Civil War","Clint Barton"),
 ("Captain America: Civil War", "Steve Rogers"), ("Captain America: Civil War","Scarlet Witch"), ("Captain America: Civil War","T'Challa"), ("Captain America: Civil War","Black Panther"), ("Captain America: Civil War","Falcon"),
-("Captain America: Civil War", "Hawkeye"), ("Captain America: Civil War","Clint Barton"), ("Captain America: Civil War","Natasha Romanoff"), ("Captain America: Civil War","Black Widow"), ("Captain America: Civil War","Winter Soldier"),
+("Captain America: Civil War", "Hawkeye"),("Captain America: Civil War","Natasha Romanoff"), ("Captain America: Civil War","Black Widow"), ("Captain America: Civil War","Winter Soldier"),
 ("Captain America: Civil War", "Iron Man"), ("Captain America: Civil War","Tony Stark"), ("Captain America: Civil War","Captain America"), ("Captain America: Civil War","Vision");
 
 -- X-Men: Days of Future Past:
