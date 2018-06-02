@@ -36,7 +36,7 @@ var orm = {
     queryString += " GROUP BY " + colName;
     queryString += " HAVING C > 1";
     queryString += " ORDER BY C DESC";
-    console.log("\n"+queryString);
+    // console.log("\n"+queryString);
     connection.query(queryString, function (err, result) {
       if (err) {
         throw err;
