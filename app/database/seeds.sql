@@ -123,3 +123,16 @@ INSERT INTO movieCharacters (movies,characters) VALUES ("Captain America: The Wi
 ("Captain America: The Winter Soldier", "Steve Rogers"), ("Captain America: The Winter Soldier","Nick Fury"), ("Captain America: The Winter Soldier","Sharon Carter"),
 ("Captain America: The Winter Soldier","Falcon"), ("Captain America: The Winter Soldier","Sharon Carter"),("Captain America: The Winter Soldier","Winter Soldier"), ("Captain America: The Winter Soldier","Natasha Romanoff"), ("Captain America: The Winter Soldier","Captain America"),
 ("Captain America: The Winter Soldier", "Black Widow");
+
+-- Iron Man:
+INSERT INTO movieCharacters (movies,characters) VALUES ("Iron Man","Obadiah Stane"), ("Iron Man","Tony Stark", "Raza"), ("Iron Man","Iron Monger"), ("Iron Man","Obadiah Stane"), 
+("Iron Man","Iron Man");
+
+-- The Amazing Spider-Man:
+INSERT INTO movieCharacters (movies,characters) VALUES ("The Amazing Spider-Man","Gwen Stacy"), ("The Amazing Spider-Man","Peter Parker"), ("The Amazing Spider-Man","Captain Stacy"),("The Amazing Spider-Man", "Peter Parker"),
+("The Amazing Spider-Man", "Spider-Man");
+
+-- The Amazing Spider-Man 2:
+INSERT INTO movieCharacters (movies,characters) VALUES ("The Amazing Spider-Man 2","Peter Parker"),("The Amazing Spider-Man 2", "Harry Osborn"), ("The Amazing Spider-Man 2","Gwen Stacy"), 
+("The Amazing Spider-Man 2","Felicia Hardy"), ("The Amazing Spider-Man 2","Peter Parker"), ("The Amazing Spider-Man 2","Harry Osborn"), ("The Amazing Spider-Man 2","Spider-Man"), 
+("The Amazing Spider-Man 2","Electro");
