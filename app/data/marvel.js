@@ -1,5 +1,5 @@
 // Import the ORM to create functions that will interact with the database.
-var orm = require("../javascript/orm.js");
+var orm = require("../public/javascript/orm.js");
 
 var marvel = {
   all: function(mm) {
