@@ -75,3 +75,30 @@ INSERT INTO movieCharacters (movies,characters) VALUES ("X-Men: First Class","Ch
 ("X-Men: First Class", "Charles Xavier"), ("X-Men: First Class","Tempest"), ("X-Men: First Class","Banshee"), ("X-Men: First Class","Havok"), ("X-Men: First Class","Beast"),
 ("X-Men: First Class", "Sebastian Shaw"), ("X-Men: First Class","Mystique"), ("X-Men: First Class","Magneto"), ("X-Men: First Class","Professor X"),
 ("X-Men: First Class", "Emma Frost");
+---------------continuing db ---------
+-- Thor:
+INSERT INTO movieCharacters (movies,characters) VALUES ("Thor","Jane Foster"),("Thor", "Loki"), ("Thor","Odin"),("Thor","Thor");
+
+-- Punisher: War Zone:
+INSERT INTO movieCharacters (movies,characters) VALUES ("Punisher: War Zone","Frank Castle"), ("Punisher: War Zone","Frank Castle"), ("Punisher: War Zone","Ink"), 
+("Punisher: War Zone","Jigsaw");
+
+-- Iron Man 2:
+INSERT INTO movieCharacters (movies,characters) VALUES ("Iron Man 2","Tony Stark"), ("Iron Man 2","Justin Hammer"), ("Iron Man 2","Nick Fury"), ("Iron Man 2","Tony Stark"),
+("Iron Man 2", "Black Widow"), ("Iron Man 2","Natasha Romanoff"), ("Iron Man 2","Iron Man");
+
+-- Avengers:
+INSERT INTO movieCharacters (movies,characters) VALUES ("Avengers","Tony Stark"), ("Avengers","Steve Rogers"), ("Avengers","Bruce Banner"),("Avengers", "Natasha Romanoff"),
+("Avengers", "Clint Barton"), ("Avengers","Loki"), ("Avengers","Nick Fury"), ("Avengers","Tony Stark"), ("Avengers","Clint Barton"), ("Avengers","Natasha Romanoff"), ("Avengers","Black Widow"),
+("Avengers","Bruce Banner"), ("Avengers","Captain America"), ("Avengers","Steve Rogers"), ("Avengers","Iron Man"), ("Avengers","Hawkeye");
+
+-- Ghost Rider: Spirit of Vengeance:
+INSERT INTO movieCharacters (movies,characters) VALUES ("Ghost Rider: Spirit of Vengeance","Johnny Blaze"), ("Ghost Rider: Spirit of Vengeance","Johnny Blaze"),
+("Ghost Rider: Spirit of Vengeance", "Blackout");
+
+-- Rise of the Silver Surfer:
+INSERT INTO movieCharacters (movies,characters) VALUES ("Rise of the Silver Surfer","Johnny Storm"), ("Rise of the Silver Surfer","Norrin Radd"),( "Rise of the Silver Surfer","Ben Grimm"),
+("Rise of the Silver Surfer", "Victor Von Doom"), ("Rise of the Silver Surfer","Alicia Masters"), ("Rise of the Silver Surfer","Norrin Radd"), ("Rise of the Silver Surfer","Doctor Doom"),
+("Rise of the Silver Surfer", "Victor Von Doom"), ("Rise of the Silver Surfer","Ben Grimm"),("Rise of the Silver Surfer", "Human Torch"), ("Rise of the Silver Surfer","Johnny Storm"),
+("Rise of the Silver Surfer", "Invisible Woman"), ("Rise of the Silver Surfer","Mr. Fantastic"), ("Rise of the Silver Surfer","Silver Surfer");
+
