@@ -74,7 +74,7 @@ INSERT INTO movieCharacters (movies,characters) VALUES ("X-Men: First Class","Ch
  ("X-Men: First Class","Tempest"), ("X-Men: First Class","Banshee"), ("X-Men: First Class","Havok"), ("X-Men: First Class","Beast"),
 ("X-Men: First Class", "Sebastian Shaw"), ("X-Men: First Class","Mystique"), ("X-Men: First Class","Magneto"), ("X-Men: First Class","Professor X"),
 ("X-Men: First Class", "Emma Frost");
----------------continuing db ---------
+
 -- Thor:
 INSERT INTO movieCharacters (movies,characters) VALUES ("Thor","Jane Foster"),("Thor", "Loki"), ("Thor","Odin"),("Thor","Thor");
 
@@ -110,7 +110,7 @@ INSERT INTO movieCharacters (movies,characters) VALUES ("Captain America: The Fi
 ("Captain America: The First Avenger", "Red Skull"), ("Captain America: The First Avenger","Captain America");
 
 -- The Wolverine:
-INSERT INTO movieCharacters (movies,characters) VALUES ("The Wolverine","Logan", "Mariko Yashida"), ("The Wolverine","Charles Xavier"), ("The Wolverine","Logan"), ("The Wolverine","Magneto"), 
+INSERT INTO movieCharacters (movies,characters) VALUES ("The Wolverine","Logan"), ("The Wolverine","Mariko Yashida"), ("The Wolverine","Charles Xavier"), ("The Wolverine","Logan"), ("The Wolverine","Magneto"), 
 ("The Wolverine","Jean Grey"), ("The Wolverine","Viper"), ("The Wolverine","Madame Hydra"), ("The Wolverine","Jean Grey"), ("The Wolverine","Professor X"), 
 ("The Wolverine","Madame Hydra"), ("The Wolverine","Wolverine");
 
@@ -124,7 +124,7 @@ INSERT INTO movieCharacters (movies,characters) VALUES ("Captain America: The Wi
 ("Captain America: The Winter Soldier", "Black Widow");
 
 -- Iron Man:
-INSERT INTO movieCharacters (movies,characters) VALUES ("Iron Man","Obadiah Stane"), ("Iron Man","Tony Stark", "Raza"), ("Iron Man","Iron Monger"), ("Iron Man","Obadiah Stane"), 
+INSERT INTO movieCharacters (movies,characters) VALUES ("Iron Man","Obadiah Stane"), ("Iron Man","Tony Stark"),("Iron Man", "Raza"), ("Iron Man","Iron Monger"), ("Iron Man","Obadiah Stane"), 
 ("Iron Man","Iron Man");
 
 -- The Amazing Spider-Man:
@@ -137,7 +137,7 @@ INSERT INTO movieCharacters (movies,characters) VALUES ("The Amazing Spider-Man 
 
 -- Avengers: Age of Ultron:
 INSERT INTO movieCharacters (movies,characters) VALUES ("Avengers: Age of Ultron","Steve Rogers"), ("Avengers: Age of Ultron","Bruce Banner"), ("Avengers: Age of Ultron","Tony Stark"),
-("Avengers: Age of Ultron","Natasha Romanoff"), ("Avengers: Age of Ultron","Clint Barton"),("Avengers: Age of Ultron", "Quicksilver"), ("Avengers: Age of Ultron"), ("Avengers: Age of Ultron","Hawkeye"),
+("Avengers: Age of Ultron","Natasha Romanoff"), ("Avengers: Age of Ultron","Clint Barton"),("Avengers: Age of Ultron", "Quicksilver"), ("Avengers: Age of Ultron","Hawkeye"),
 ("Avengers: Age of Ultron","Black Widow"), ("Avengers: Age of Ultron","Captain America"), ("Avengers: Age of Ultron","Nick Fury"), 
 ("Avengers: Age of Ultron","Scarlet Witch"), ("Avengers: Age of Ultron","Iron Man");
 
