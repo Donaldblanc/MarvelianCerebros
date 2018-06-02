@@ -44,6 +44,19 @@ var orm = {
       cb(result);
     });
   },
+  allCharacters: function(colName,table,movieCol,movieName,cb){
+    var queryString = "SELECT " + colName;
+    queryString += " FROM "+table;
+    queryString += " WHERE "+movieCol;
+    queryString += " = "+"'"+movieName+"'"+";";
+    // console.log(queryString);
+    connection.query(queryString, function (err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
   all: function (tableInput, mm) {
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function (err, result) {
