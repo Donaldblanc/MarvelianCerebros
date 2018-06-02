@@ -136,3 +136,25 @@ INSERT INTO movieCharacters (movies,characters) VALUES ("The Amazing Spider-Man"
 INSERT INTO movieCharacters (movies,characters) VALUES ("The Amazing Spider-Man 2","Peter Parker"),("The Amazing Spider-Man 2", "Harry Osborn"), ("The Amazing Spider-Man 2","Gwen Stacy"), 
 ("The Amazing Spider-Man 2","Felicia Hardy"), ("The Amazing Spider-Man 2","Peter Parker"), ("The Amazing Spider-Man 2","Harry Osborn"), ("The Amazing Spider-Man 2","Spider-Man"), 
 ("The Amazing Spider-Man 2","Electro");
+
+-- Avengers: Age of Ultron:
+INSERT INTO movieCharacters (movies,characters) VALUES ("Avengers: Age of Ultron","Steve Rogers"), ("Avengers: Age of Ultron","Bruce Banner"), ("Avengers: Age of Ultron","Tony Stark"),
+("Avengers: Age of Ultron","Natasha Romanoff"), ("Avengers: Age of Ultron","Clint Barton"),("Avengers: Age of Ultron", "Quicksilver"), ("Avengers: Age of Ultron"), ("Avengers: Age of Ultron","Hawkeye"),
+("Avengers: Age of Ultron","Black Widow"), ("Avengers: Age of Ultron","Captain America"), ("Avengers: Age of Ultron","Nick Fury"),  ("Avengers: Age of Ultron","Bruce Banner"), 
+("Avengers: Age of Ultron","Scarlet Witch"), ("Avengers: Age of Ultron","Iron Man");
+
+-- X-Men: Apocalypse:
+INSERT INTO movieCharacters (movies,characters) VALUES ("X-Men: Apocalypse","Charles Xavier"), ("X-Men: Apocalypse","Moira MacTaggert"), ("X-Men: Apocalypse","Charles Xavier"),
+("X-Men: Apocalypse", "Havok"), ("X-Men: Apocalypse","Cyclops"), ("X-Men: Apocalypse","Quicksilver"),("X-Men: Apocalypse","Jean Grey"), ("X-Men: Apocalypse","Apocalypse"), ("X-Men: Apocalypse","Beast"),
+("X-Men: Apocalypse", "Magneto"), ("X-Men: Apocalypse","Professor X"), ("X-Men: Apocalypse","Mystique");
+
+-- Captain America: Civil War:
+INSERT INTO movieCharacters (movies,characters) VALUES ("Captain America: Civil War","Tony Stark"), ("Captain America: Civil War","Steve Rogers"), ("Captain America: Civil War","Clint Barton"),
+("Captain America: Civil War", "Steve Rogers"), ("Captain America: Civil War","Scarlet Witch"), ("Captain America: Civil War","T'Challa"), ("Captain America: Civil War","Black Panther"), ("Captain America: Civil War","Falcon"),
+("Captain America: Civil War", "Hawkeye"), ("Captain America: Civil War","Clint Barton"), ("Captain America: Civil War","Natasha Romanoff"), ("Captain America: Civil War","Black Widow"), ("Captain America: Civil War","Winter Soldier"),
+("Captain America: Civil War", "Iron Man"), ("Captain America: Civil War","Tony Stark"), ("Captain America: Civil War","Captain America"), ("Captain America: Civil War","Vision");
+
+-- X-Men: Days of Future Past:
+INSERT INTO movieCharacters (movies,characters) VALUES ("X-Men: Days of Future Past","Logan"), ("X-Men: Days of Future Past","Charles Xavier"), ("X-Men: Days of Future Past", "Beast"),
+("X-Men: Days of Future Past", "Professor X"), ("X-Men: Days of Future Past","Magneto"), ("X-Men: Days of Future Past","Shadowcat"), ("X-Men: Days of Future Past","Rogue"),
+("X-Men: Days of Future Past", "Mystique"), ("X-Men: Days of Future Past","Storm"), ("X-Men: Days of Future Past","Wolverine");
