@@ -102,3 +102,15 @@ INSERT INTO movieCharacters (movies,characters) VALUES ("Rise of the Silver Surf
 ("Rise of the Silver Surfer", "Victor Von Doom"), ("Rise of the Silver Surfer","Ben Grimm"),("Rise of the Silver Surfer", "Human Torch"), ("Rise of the Silver Surfer","Johnny Storm"),
 ("Rise of the Silver Surfer", "Invisible Woman"), ("Rise of the Silver Surfer","Mr. Fantastic"), ("Rise of the Silver Surfer","Silver Surfer");
 
+-- The Incredible Hulk:
+INSERT INTO movieCharacters (movies,characters) VALUES ("The Incredible Hulk","Bruce Banner"), ("The Incredible Hulk","Betty Ross"), ("The Incredible Hulk","Bruce Banner"),
+("The Incredible Hulk","Abomination"),("The Incredible Hulk","Hulk");
+
+-- Captain America: The First Avenger:
+INSERT INTO movieCharacters (movies,characters) VALUES ("Captain America: The First Avenger","Steve Rogers"), ("Captain America: The First Avenger","Gabe Jones"), ("Captain America: The First Avenger","Steve Rogers"),
+("Captain America: The First Avenger", "Red Skull"), ("Captain America: The First Avenger","Captain America");
+
+-- The Wolverine:
+INSERT INTO movieCharacters (movies,characters) VALUES ("The Wolverine","Logan", "Mariko Yashida"), ("The Wolverine","Charles Xavier"), ("The Wolverine","Logan"), ("The Wolverine","Magneto"), 
+("The Wolverine","Jean Grey"), ("The Wolverine","Charles Xavier"), ("The Wolverine","Viper"), ("The Wolverine","Madame Hydra"), ("The Wolverine","Jean Grey"), ("The Wolverine","Professor X"), 
+("The Wolverine","Madame Hydra"), ("The Wolverine","Wolverine");
