@@ -114,3 +114,12 @@ INSERT INTO movieCharacters (movies,characters) VALUES ("Captain America: The Fi
 INSERT INTO movieCharacters (movies,characters) VALUES ("The Wolverine","Logan", "Mariko Yashida"), ("The Wolverine","Charles Xavier"), ("The Wolverine","Logan"), ("The Wolverine","Magneto"), 
 ("The Wolverine","Jean Grey"), ("The Wolverine","Charles Xavier"), ("The Wolverine","Viper"), ("The Wolverine","Madame Hydra"), ("The Wolverine","Jean Grey"), ("The Wolverine","Professor X"), 
 ("The Wolverine","Madame Hydra"), ("The Wolverine","Wolverine");
+
+-- Iron Man 3:
+INSERT INTO movieCharacters (movies,characters) VALUES ("Iron Man 3","Tony Stark"), ("Iron Man 3","Rhodey"), ("Iron Man 3","Iron Man"),("Iron Man 3","War Machine"), ("Iron Man 3","Pepper");
+
+-- Captain America: The Winter Soldier:
+INSERT INTO movieCharacters (movies,characters) VALUES ("Captain America: The Winter Soldier","Natasha Romanoff"), ("Captain America: The Winter Soldier","Alexander Pierce"),
+("Captain America: The Winter Soldier", "Steve Rogers"), ("Captain America: The Winter Soldier","Nick Fury"), ("Captain America: The Winter Soldier","Sharon Carter"),
+("Captain America: The Winter Soldier","Falcon"), ("Captain America: The Winter Soldier","Sharon Carter"),("Captain America: The Winter Soldier","Winter Soldier"), ("Captain America: The Winter Soldier","Natasha Romanoff"), ("Captain America: The Winter Soldier","Captain America"),
+("Captain America: The Winter Soldier", "Black Widow");
