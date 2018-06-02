@@ -1,13 +1,17 @@
 
 import fetch from 'node-fetch';
-var movies = require("../data/movies.js");//import movies object from data folder
-const movieInfo = [];
-let moviesApi = {
-    displayMovie: function (cb) {
+import marvelAPi from '../model/marvelApi'
 
-        movies.allMovies(function (result) {
+
+var controller = require("../data/controller.js");//import movies object from data folder
+const movieInfo = [];
+const charactersID = [];
+let moviesApi = {
+    getMovies: function (cb) {
+
+        controller.allMovies(function (result) {
             // console.log("DATA INSIDE moviesApi.js file :");
-            console.log(result);
+            // console.log(result);
             // console.log(result.length);
             // console.log("FROM MOVIES JS: "+res);
             for (let i = 0; i < result.length; i++) {
@@ -20,12 +24,33 @@ let moviesApi = {
                     .then(function (response) {
 
                         movieInfo.push(response.Poster);
-                        if (movieInfo.length === result.length){
+                        if (movieInfo.length === result.length) {
                             cb(movieInfo)
                         }
                     })
             }
 
+        })
+
+    },
+    getCharacters: function (movie, cb) {
+
+        controller.allCharacters(movie, function (result) {
+            // console.log(result);
+            for (let i = 0; i < result.length; i++) {
+                // let movieName = "Spider-Man"
+                let characterName = result[i].characters.toString();
+
+                marvelAPi.character(characterName, function (res){
+                    // console.log(res);
+                    // cb(resp)
+                    charactersID.push(res)
+                    if (result.length === charactersID.length) {
+                        cb(charactersID);
+                    }
+                })
+
+            }
         })
 
     }
