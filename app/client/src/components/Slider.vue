@@ -1,0 +1,86 @@
+<template>
+  <div>
+    <transition-group name='fade' tag='div'>
+      <div v-for="number in [currentNumber]" :key='number'>
+        <img :src="currentImage"
+        @mouseover="stopRotation" @mouseout="startRotation"/>
+        <h1>{{ heroes[Math.abs(currentNumber) % heroes.length] }}</h1>
+        <button>SEE THE COMIC</button>
+        <span><a @click="prev" href='#'>&#8656;</a> | | <a @click="next" href='#'>&#8658;</a></span>
+      </div>
+    </transition-group>
+  </div>
+</template>
+
+<script>
+import spiderman from '../assets/spiderman.png';
+import hulk from '../assets/hulk.png';
+import cap from '../assets/captain america.png';
+
+export default {
+  name: 'Slider',
+  data() {
+    return {
+      images: [spiderman, hulk, cap],
+      heroes: ['Spiderman', 'Hulk', 'Captain America'],
+      currentNumber: 0,
+    };
+  },
+  mounted() {
+    this.startRotation();
+  },
+  methods: {
+    startRotation() {
+      this.timer = setInterval(this.next, 4000);
+    },
+    stopRotation() {
+      clearTimeout(this.timer);
+      this.timer = null;
+    },
+    next() {
+      this.currentNumber += 1;
+    },
+    prev() {
+      this.currentNumber -= 1;
+    },
+  },
+  computed: {
+    currentImage() {
+      return this.images[Math.abs(this.currentNumber) % this.images.length];
+    },
+  },
+};
+</script>
+
+<style scoped>
+img {
+  height: 100%;
+}
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+a {
+  color: aliceblue;
+  text-decoration: none;
+}
+button {
+  font-family: "Bowlby One SC", cursive;
+  color: aliceblue;
+  background-color: #568080;
+  border: none;
+  padding: 5px;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: all 0.8s ease;
+  overflow: hidden;
+  visibility: visible;
+  opacity: 1;
+  position: absolute;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+  visibility: hidden;
+}
+</style>
