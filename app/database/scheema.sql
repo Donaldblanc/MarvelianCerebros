@@ -1,3 +1,5 @@
+Drop DATABASE IF EXISTS marvel_db;
+
 CREATE DATABASE marvel_db;
 
 USE marvel_db;
@@ -11,6 +13,6 @@ CREATE TABLE table1(
 
 CREATE TABLE table2(
     movies VARCHAR(255),
-    figures VARCHAR(255),
+    characters VARCHAR(255),
     PRIMARY KEY (movies)
 );
