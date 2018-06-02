@@ -5,15 +5,11 @@ const movieInfo = [];
 let moviesApi = {
     displayMovie: function (cb) {
 
-        // console.log("FROM MOVIES API: "+cb(res));
-        // cb(res);
         movies.allMovies(function (result) {
             // console.log("DATA INSIDE moviesApi.js file :");
             // console.log(result);
             // console.log(result.length);
             // console.log("FROM MOVIES JS: "+res);
-            // cb1(res);
-
             for (let i = 0; i < result.length; i++) {
                 // let movieName = "Spider-Man"
                 let movieName = result[i].movies.toString();
@@ -24,30 +20,13 @@ let moviesApi = {
                     .then(function (response) {
 
                         movieInfo.push(response.Poster);
-                        Promise.all(movieInfo).then(function (values) {
-                            console.log(values);
-                        });
-                        // console.log(response.Poster);
-                        // console.log(movieInfo);
-                        // cb(movieInfo);//only returns last movie called and throws unhandledpromiserejection
+                        if (movieInfo.length === result.length){
+                            cb(movieInfo)
+                        }
                     })
-                // Promise.all(movieInfo).then(function(values){
-                //     console.log(values)
-                // });
-                // console.log(Promise.all(movieInfo));
             }
-            // sendMovieInfo();
-            // Promise.all(movieInfo).then(function(values){
-            //     console.log(values)
-            // });
-            // cb(movieInfo);//returns empty array or object
-            // console.log(movieInfo);
-        })(
-            cb(movieInfo)
-        )
-        // async function sendMovieInfo(){
-        //     cb(movieInfo);
-        // }
+
+        })
 
     }
 

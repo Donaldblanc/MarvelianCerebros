@@ -19,7 +19,7 @@ export default function (app) {
     //first route taken once page is opened, function only gets a callback no query needed here
     app.get("/api/movies", (request, response) => {
         moviesAPi.displayMovie(function (results) {
-            console.log("Movie information: " + results)
+            // console.log("Movie information: " + results)
             response.json(results);
         });
     });
