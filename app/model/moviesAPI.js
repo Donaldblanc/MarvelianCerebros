@@ -7,7 +7,7 @@ let moviesApi = {
 
         movies.allMovies(function (result) {
             // console.log("DATA INSIDE moviesApi.js file :");
-            // console.log(result);
+            console.log(result);
             // console.log(result.length);
             // console.log("FROM MOVIES JS: "+res);
             for (let i = 0; i < result.length; i++) {
