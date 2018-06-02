@@ -51,7 +51,6 @@ let marvelApi = {
         })
 
     }          
-
 }
 
 export default marvelApi ;
