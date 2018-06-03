@@ -29,7 +29,9 @@
     "express-handlebars": "^3.0.0",
     "marvel": "^1.1.0",
     "mysql": "^2.15.0",
-    "node-fetch": "^2.1.2"
+    "mysql2": "^1.5.3",
+    "node-fetch": "^2.1.2",
+    "sequelize": "^4.37.10"
   },
   "devDependencies": {
     "nodemon": "^1.17.5"

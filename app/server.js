@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //route handlers
-app.use('/api', apiRoutes);
+apiRoutes(app);
 app.use(history());
 
 app.listen(PORT, () =>{ 
