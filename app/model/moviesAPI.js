@@ -23,7 +23,7 @@ let moviesApi = {
                     .catch(error => console.error('Error:', error))
                     .then(function (response) {
 
-                        movieInfo.push(response.Poster);
+                        movieInfo.push(response);
                         if (movieInfo.length === result.length) {
                             cb(movieInfo)
                         }

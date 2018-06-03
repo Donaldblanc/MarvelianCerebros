@@ -1,9 +1,8 @@
 <template>
-  <div @scroll="getMovies">
-    <ul v-for="movie in fetchRes.movieData" :key="movie.id">
-      <div>
-
-      </div>
+  <div>
+    <button @click="getMovies">TEST</button>
+    <ul>
+      <li v-for="movie in [json]" :key="movie.imdbID">{{ movie.Title }}</li>
     </ul>
   </div>
 </template>
@@ -13,12 +12,12 @@ export default {
   name: 'MoviesPortal',
   data() {
     return {
-      fetchRes: movieData,
+      json: [],
     };
   },
   methods: {
-    async getMovies() {
-      const movieData = await fetch.get('/api/moives').then(res => res.json());
+      getMovies() {
+        fetch('/api/movies').then(res => res.json()).then(res => this.json = res)
     },
   },
 };
