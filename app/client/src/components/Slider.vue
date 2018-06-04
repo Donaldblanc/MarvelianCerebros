@@ -67,7 +67,7 @@ div {
   justify-content: space-between;
 }
 a {
-  color: aliceblue;
+  color: #E32636;
   text-decoration: none;
 }
 button {
@@ -80,6 +80,7 @@ button {
 }
 span {
   order: 4;
+  color: #E32636;
 }
 .fade-enter-active, .fade-leave-active {
   transition: all 0.8s ease;

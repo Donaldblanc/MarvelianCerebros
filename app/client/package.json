@@ -12,6 +12,7 @@
     "pug-loader": "^2.4.0",
     "pug-plain-loader": "^1.0.0",
     "vue": "^2.5.16",
+    "vue-carousel": "^0.8.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

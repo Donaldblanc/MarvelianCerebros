@@ -35,6 +35,7 @@ export default {
   grid-template-rows: 150px repeat(13, 1fr);
   min-height: 0;
   min-width: 0;
+  grid-gap: 10px;
 }
 #slider1 {
   grid-column: 2 / 6;
@@ -47,11 +48,15 @@ export default {
   width: 100%;
   grid-column: 1 / 13;
   grid-row: 1 / 6;
-  height: 100%;
+
 }
 #mp {
-  grid-column: 1 / 13;
-  grid-row: 6 / 15;
+  grid-column: 3 / 11;
+  grid-row: 6 / 9;
+  min-width: 0;
+}
+.VueCarousel-navigation {
+  color: aliceblue;
 }
 #blurb {
   font-family: 'Open Sans', sans-serif;
