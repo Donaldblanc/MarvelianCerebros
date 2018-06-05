@@ -12,6 +12,13 @@ export default function (app) {
             response.json(results);
         });
     });
+    app.get ("/api/movieTrailer/:movieTitle", (request, response) => {
+        let movieTitle = request.params.movieTitle;
+        console.log(movieTitle);
+        moviesAPi.getTrailer(movieTitle,function(results){
+            response.json(results);
+        })
+    })
     app.get("/api/movieCharacters/:characters", (request, response) => {
         let movieChar = request.params.characters;
         console.log("Movie in apicall: "+movieChar)

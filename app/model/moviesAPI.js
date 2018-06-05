@@ -41,7 +41,7 @@ let moviesApi = {
                 // let movieName = "Spider-Man"
                 let characterName = result[i].characters.toString();
 
-                marvelAPi.character(characterName, function (res){
+                marvelAPi.character(characterName, function (res) {
                     // console.log(res);
                     // cb(resp)
                     charactersID.push(res)
@@ -53,9 +53,21 @@ let moviesApi = {
             }
         })
 
+    },
+    getTrailer: function (movieTitle, cb) {
+        var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=" + movieTitle + "trailer&key=AIzaSyC8th4wDxjLmTn1fONnkSMaUaGAGTUNQRA";
+        console.log(queryURL);
+        fetch(queryURL)
+            .then(function (response_youtube) {
+                return (response_youtube.json());
+            }).then(function (response_youtube) {
+                let video_Id = response_youtube.items[0].id.videoId;
+                let videoLink = "https://www.youtube.com/embed/" + video_Id + "?autoplay=1";
+                // console.log("Click the link: "+videoLink);
+                cb([videoLink]);
+            }).catch(function (response_youtube) {
+            });
     }
-
-
 }
 
 export default moviesApi;
