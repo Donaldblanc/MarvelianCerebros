@@ -9,6 +9,7 @@
     <Slider id="slider1"></Slider>
     <MoviesPortal id="mp"></MoviesPortal>
     <CharactersPortal id="cp"></CharactersPortal>
+    <ComicsPortal id="comics-portal"></ComicsPortal>
   </div>
 </template>
 
@@ -16,6 +17,7 @@
 import Slider from '@/components/Slider.vue';
 import MoviesPortal from '@/components/MoviesPortal.vue';
 import CharactersPortal from '@/components/CharactersPortal.vue';
+import ComicsPortal from '@/components/ComicsPortal.vue';
 
 export default {
   name: 'home',
@@ -23,6 +25,7 @@ export default {
     Slider,
     MoviesPortal,
     CharactersPortal,
+    ComicsPortal,
   },
 };
 </script>
@@ -35,7 +38,7 @@ export default {
   grid-column-end: 13;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 150px repeat(13, 1fr);
+  grid-template-rows: 150px repeat(14, 1fr);
   min-height: 0;
   min-width: 0;
   grid-gap: 10px;
@@ -54,17 +57,25 @@ export default {
 }
 #mp {
   grid-column: 3 / 11;
-  grid-row: 6 / 9;
+  grid-row: 7 / 10;
   min-width: 0;
 }
 #cp {
   grid-column: 3 / 11;
-  grid-row: 10 / 12;
+  grid-row: 11 / 13;
+  min-width: 0;
+}
+#comics-portal {
+  grid-column: 3 / 11;
+  grid-row: 13 / 15;
   min-width: 0;
 }
 .thumbnails {
   width: 55%;
   border-radius: 50%;
+}
+.comic-thumbnails {
+  width: 55%;
 }
 #blurb {
   font-family: 'Open Sans', sans-serif;

@@ -1,8 +1,10 @@
 <template>
-  <div class="gallery">
+  <div class="gallery1">
+    <p v-if="characters.length === 0">Select a movie</p>
     <div v-for="character in characters" :key="characters.indexOf(character)">
     <img class="thumbnails" style="cursor: pointer"
-    :src="character[0].thumbnail.path + '.' + character[0].thumbnail.extension"/>
+    :src="character[0].thumbnail.path + '.' + character[0].thumbnail.extension"
+     :alt="character[0].name" :data-id="character[0].id" @dblclick="getComics($event)"/>
     </div>
   </div>
 </template>
@@ -21,19 +23,19 @@ export default {
   },
   created() {
     eventBus.$on('movieSelected', (movie) => {
-      // eslint-disable-next-line
-      console.log(movie);
       fetch(`/api/movieCharacters/${movie}`).then(res => res.json()).then((res) => {
         this.characters = res;
       });
     });
   },
   updated() {
-    $('.gallery').slick({
+    // eslint-disable-next-line
+    $('.gallery1').slick({
       autoplay: false,
       dots: false,
       slidesToShow: 4,
       slidesToScroll: 4,
+      adaptiveHeight: true,
       responsive: [{
         breakpoint: 500,
         settings: {
@@ -44,8 +46,16 @@ export default {
       }],
     });
   },
+  methods: {
+    getComics(event) {
+      eventBus.$emit('characterSelected', event.currentTarget.dataset.id);
+    },
+  },
 };
 </script>
 
 <style scoped>
+ .gallery {
+   text-align: center;
+ }
 </style>
