@@ -33,6 +33,7 @@ export default {
       autoplay: false,
       dots: false,
       slidesToShow: 4,
+      slidesToScroll: 4,
       responsive: [{
         breakpoint: 500,
         settings: {
