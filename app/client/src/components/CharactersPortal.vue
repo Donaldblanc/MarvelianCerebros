@@ -1,6 +1,6 @@
 <template>
   <div class="gallery1">
-    <p v-if="characters.length === 0">Select a movie</p>
+    <p v-if="characters.length === 0">Pick a movie</p>
     <div v-for="character in characters" :key="characters.indexOf(character)">
     <img class="thumbnails" style="cursor: pointer"
     :src="character[0].thumbnail.path + '.' + character[0].thumbnail.extension"
@@ -55,7 +55,9 @@ export default {
 </script>
 
 <style scoped>
- .gallery {
+ .gallery1 {
    text-align: center;
+   font-family: 'Open Sans', sans-serif;
+   font-size: 30px;
  }
 </style>

@@ -20,20 +20,20 @@ INSERT INTO movieCharacters (movies,characters) VALUES ("The Punisher","Frank Ca
 -- Blade II:
 INSERT INTO movieCharacters (movies,characters) VALUES ("Blade II","Whistler"),("Blade II", "Blade");
 
--- Spider-man:
+-- Spider-Man:
 
-INSERT INTO movieCharacters (movies,characters) VALUES ("Spider-man","Mary Jane Watson"),("Spider-man", "Peter Parker"),("Spider-man", "Harry Osborn"), 
-("Spider-man","Ben Parker"), ("Spider-man","J. Jonah Jameson"), ("Spider-man","Betty Brant"),("Spider-man","Spider-Man"),
-("Spider-man", "Norman Osborn"), ("Spider-man","May Parker");
+INSERT INTO movieCharacters (movies,characters) VALUES ("Spider-Man","Mary Jane Watson"),("Spider-Man", "Peter Parker"),("Spider-Man", "Harry Osborn"), 
+("Spider-Man","Ben Parker"), ("Spider-Man","J. Jonah Jameson"), ("Spider-Man","Betty Brant"),("Spider-Man","Spider-Man"),
+("Spider-Man", "Norman Osborn"), ("Spider-Man","May Parker");
 
 -- Daredevil:
 INSERT INTO movieCharacters (movies,characters) VALUES ("Daredevil", "Daredevil"),("Daredevil", "Matt Murdock"),("Daredevil", "Elektra Natchios"),("Daredevil","Bullseye"),
 ("Daredevil","The Kingpin"),("Daredevil","Wilson Fisk"),("Daredevil","Franklin Nelson"),("Daredevil", "Foggy");
 
--- Spider-man 2:
-INSERT INTO movieCharacters (movies,characters) VALUES ("Spider-man 2","Peter Parker"),("Spider-man 2" ,"Mary Jane Watson"),("Spider-man 2","Harry Osborn"),
-("Spider-man 2" ,"J. Jonah Jameson"), ("Spider-man 2","May Parker"), 
-("Spider-man 2", "Norman Osborn"), ("Spider-man 2","Doctor Octopus"), ("Spider-man 2","Spider-Man");
+-- Spider-Man 2:
+INSERT INTO movieCharacters (movies,characters) VALUES ("Spider-Man 2","Peter Parker"),("Spider-Man 2" ,"Mary Jane Watson"),("Spider-Man 2","Harry Osborn"),
+("Spider-Man 2" ,"J. Jonah Jameson"), ("Spider-Man 2","May Parker"), 
+("Spider-Man 2", "Norman Osborn"), ("Spider-Man 2","Doctor Octopus"), ("Spider-Man 2","Spider-Man");
 
 -- Blade: Trinity:
 INSERT INTO movieCharacters (movies,characters) VALUES ("Blade: Trinity","Whistler"), ("Blade: Trinity","Blade"), ("Blade: Trinity","Hannibal King");

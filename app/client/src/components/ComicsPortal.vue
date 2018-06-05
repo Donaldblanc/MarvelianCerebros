@@ -1,6 +1,6 @@
 <template>
     <div class="gallery2">
-    <p v-if="comics.length === 0">Select a character</p>
+    <p v-if="comics.length === 0">Then a character</p>
     <div v-for="comic in comics" :key="comics.indexOf(comic)">
     <img class="comic-thumbnails" :src="comic.thumbnail.path + '.' + comic.thumbnail.extension"/>
     </div>
@@ -24,6 +24,9 @@ export default {
       fetch(`/api/comics/${id}`).then(res => res.json()).then((res) => {
         this.comics = res;
       });
+    });
+    eventBus.$on('movieSelected', () => {
+      document.querySelector('.gallery2').style.opacity = 1;
     });
   },
   updated() {
@@ -50,5 +53,8 @@ export default {
 <style>
  .gallery2 {
    text-align: center;
+   font-family: 'Open Sans', sans-serif;
+   font-size: 30px;
+   opacity: 0.3;
  }
 </style>
