@@ -49,7 +49,6 @@ let marvelApi = {
                 cb(resp); 
             }
         })
-
     }          
 }
 

@@ -1,9 +1,10 @@
 require("dotenv").config();
+//var path = require('path');
+import path from 'path'
 import fetch from 'node-fetch';
 import marvelAPi from '../model/marvelApi'
 import moviesAPi from '../model/moviesApi'
-//import Marvel from "marvel";
-//import * as KEYS  from '../keys.js';
+
 import request from "request";//added request for working on OMDB API
 
 //const KEYS = require('../keys.js');
@@ -16,6 +17,13 @@ export default function (app) {
     var name = "spider-man";
     var charId = "";
     var queryURL = marvURL + charSearch + name + apiAuth;
+
+    var messages = [
+        {name: 'Tim', message: 'Hi'},
+        {name: 'Jane', message: 'Hello'}
+    ]
+
+
     //first route taken once page is opened, function only gets a callback no query needed here
     app.get("/api/movies", (request, response) => {
         moviesAPi.displayMovie(function (results) {
@@ -63,7 +71,6 @@ export default function (app) {
                         // console.log("comics results: " + results) 
                          response.json(results);
                       });
-
                 }
                 else{
                     marvelAPi.comics('1009351', function(results){
@@ -71,9 +78,38 @@ export default function (app) {
                          response.json(results);
                          });
                 }
-
-                 
-           
             });
+
+                app.get("/", (request, response)=>{
+
+                    response.sendFile(path.resolve('app/public/index.html'));
+                    ////Users/donaldblanc/Documents/GitHub/Rutgers University/MarvelianCerebros/app/public/index.html
+                })
+
+
+            app.get("/messages", (request, response) =>{
+               // console.log("in the messages route");
+                response.send(messages);
+            });
+
+
+            app.post('/messages', (req, res) => {
+                //var message = new Message(req.body)
+
+                console.log(req.body)
+                messages.push(req.body)
+                res.sendStatus(200)
+                console.log(messages)
+            
+                // message.save((err) => {
+                //     if (err)
+                //         sendStatus(500)
+            
+                //     io.emit('message', req.body)
+                //     res.sendStatus(200)
+                // })
+            });
+
+            
 
 }// export default 
