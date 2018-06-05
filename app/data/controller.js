@@ -3,7 +3,7 @@ var orm = require("../data/orm.js");
 
 var controller = {
   all: function (mm) {
-    orm.all("table1", "table2", function (res) {
+    orm.all("table1", "table1", function (res) {
       mm(res);
     });
   },
@@ -24,14 +24,14 @@ var controller = {
     });
   },
   allMovies: function (cb) {
-    orm.allMovies("movies", "marvel_db.movieCharacters", function (res) {
+    orm.allMovies("movies", "movie", function (res) {
       // console.log(res);
       // console.log(res.movies);
       cb(res);
     });
   },
   allCharacters: function (movie, cb) {
-    orm.allCharacters("characters", "marvel_db.movieCharacters", "movies", movie, function (res) {
+    orm.allCharacters("movie_character", "characters", "movies", "characters.movieID", "id.movie", function (res) {
       // console.log(res);
       cb(res);
     })

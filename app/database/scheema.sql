@@ -12,9 +12,18 @@ CREATE TABLE usersBlog(
     PRIMARY KEY (id)
 );
 
-CREATE TABLE movieCharacters(
+CREATE TABLE movie(
     id int NOT NULL AUTO_INCREMENT,
     movies VARCHAR(255),
-    characters VARCHAR(255),
     primary key(id)
 );
+
+CREATE TABLE characters(
+    id int NOT NULL AUTO_INCREMENT,
+    character VARCHAR(255),
+    movieID int, 
+    FOREIGN KEY (movieID) REFERENCES movie(id)  
+);
+
+
+
