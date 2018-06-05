@@ -87,19 +87,19 @@ INSERT INTO movieCharacters (movies,characters) VALUES ("Iron Man 2","Tony Stark
 ("Iron Man 2", "Black Widow"), ("Iron Man 2","Natasha Romanoff"), ("Iron Man 2","Iron Man");
 
 -- Avengers:
-INSERT INTO movieCharacters (movies,characters) VALUES ("Avengers","Tony Stark"), ("Avengers","Steve Rogers"), ("Avengers","Bruce Banner"),
-("Avengers", "Clint Barton"), ("Avengers","Loki"), ("Avengers","Nick Fury"), ("Avengers","Clint Barton"), ("Avengers","Natasha Romanoff"), ("Avengers","Black Widow"),
-("Avengers","Bruce Banner"), ("Avengers","Captain America"), ("Avengers","Steve Rogers"), ("Avengers","Iron Man"), ("Avengers","Hawkeye");
+INSERT INTO movieCharacters (movies,characters) VALUES ("The Avengers","Tony Stark"), ("The Avengers","Steve Rogers"), ("The Avengers","Bruce Banner"),
+("The Avengers", "Clint Barton"), ("The Avengers","Loki"), ("The Avengers","Nick Fury"), ("The Avengers","Clint Barton"), ("The Avengers","Natasha Romanoff"), ("The Avengers","Black Widow"),
+("The Avengers","Bruce Banner"), ("The Avengers","Captain America"), ("The Avengers","Steve Rogers"), ("The Avengers","Iron Man"), ("The Avengers","Hawkeye");
 
 -- Ghost Rider: Spirit of Vengeance:
 INSERT INTO movieCharacters (movies,characters) VALUES ("Ghost Rider: Spirit of Vengeance","Johnny Blaze"), ("Ghost Rider: Spirit of Vengeance","Johnny Blaze"),
 ("Ghost Rider: Spirit of Vengeance", "Blackout");
 
--- Rise of the Silver Surfer:
-INSERT INTO movieCharacters (movies,characters) VALUES ("Rise of the Silver Surfer","Johnny Storm"), ("Rise of the Silver Surfer","Norrin Radd"),( "Rise of the Silver Surfer","Ben Grimm"),
-("Rise of the Silver Surfer", "Victor Von Doom"), ("Rise of the Silver Surfer","Alicia Masters"), ("Rise of the Silver Surfer","Norrin Radd"), ("Rise of the Silver Surfer","Doctor Doom"),
-("Rise of the Silver Surfer","Ben Grimm"),("Rise of the Silver Surfer", "Human Torch"), ("Rise of the Silver Surfer","Johnny Storm"),
-("Rise of the Silver Surfer", "Invisible Woman"), ("Rise of the Silver Surfer","Mr. Fantastic"), ("Rise of the Silver Surfer","Silver Surfer");
+-- Fantastic 4: Rise of the Silver Surfer:
+INSERT INTO movieCharacters (movies,characters) VALUES ("Fantastic 4: Rise of the Silver Surfer","Johnny Storm"), ("Fantastic 4: Rise of the Silver Surfer","Norrin Radd"),( "Fantastic 4: Rise of the Silver Surfer","Ben Grimm"),
+("Fantastic 4: Rise of the Silver Surfer", "Victor Von Doom"), ("Fantastic 4: Rise of the Silver Surfer","Alicia Masters"), ("Fantastic 4: Rise of the Silver Surfer","Norrin Radd"), ("Fantastic 4: Rise of the Silver Surfer","Doctor Doom"),
+("Fantastic 4: Rise of the Silver Surfer","Ben Grimm"),("Fantastic 4: Rise of the Silver Surfer", "Human Torch"), ("Fantastic 4: Rise of the Silver Surfer","Johnny Storm"),
+("Fantastic 4: Rise of the Silver Surfer", "Invisible Woman"), ("Fantastic 4: Rise of the Silver Surfer","Mr. Fantastic"), ("Fantastic 4: Rise of the Silver Surfer","Silver Surfer");
 
 -- The Incredible Hulk:
 INSERT INTO movieCharacters (movies,characters) VALUES ("The Incredible Hulk","Bruce Banner"), ("The Incredible Hulk","Betty Ross"),

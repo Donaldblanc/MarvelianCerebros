@@ -8,18 +8,21 @@
     </div>
     <Slider id="slider1"></Slider>
     <MoviesPortal id="mp"></MoviesPortal>
+    <CharactersPortal id="cp"></CharactersPortal>
   </div>
 </template>
 
 <script>
 import Slider from '@/components/Slider.vue';
 import MoviesPortal from '@/components/MoviesPortal.vue';
+import CharactersPortal from '@/components/CharactersPortal.vue';
 
 export default {
   name: 'home',
   components: {
     Slider,
     MoviesPortal,
+    CharactersPortal,
   },
 };
 </script>
@@ -48,15 +51,20 @@ export default {
   width: 100%;
   grid-column: 1 / 13;
   grid-row: 1 / 6;
-
 }
 #mp {
   grid-column: 3 / 11;
   grid-row: 6 / 9;
   min-width: 0;
 }
-.VueCarousel-navigation {
-  color: aliceblue;
+#cp {
+  grid-column: 3 / 11;
+  grid-row: 10 / 12;
+  min-width: 0;
+}
+.thumbnails {
+  width: 55%;
+  border-radius: 50%;
 }
 #blurb {
   font-family: 'Open Sans', sans-serif;
