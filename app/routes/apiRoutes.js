@@ -84,13 +84,13 @@ export default function (app) {
             }
         })
     });
-    app.get ("/api/movieTrailer/:movieTitle", (request, response) => {
-        let movieTitle = request.params.movieTitle;
+    app.get("/api/movieTrailer/:movieTitle", (request, response) => {
+        const movieTitle = request.params.movieTitle;
         console.log(movieTitle);
-        moviesAPi.getTrailer(movieTitle,function(results){
+        moviesAPi.getTrailer(movieTitle, function (results) {
             response.json(results);
-        })
-    })
+        });
+    });
 
 }// export default 
 

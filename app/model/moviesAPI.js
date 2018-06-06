@@ -41,7 +41,7 @@ let moviesApi = {
                 // let movieName = "Spider-Man"
                 let characterName = result[i].characters.toString();
 
-                marvelAPi.character(characterName, function (res){
+                marvelAPi.character(characterName, function (res) {
                     // console.log(res);
                     // cb(resp)
                     charactersID.push(res)
@@ -66,6 +66,7 @@ let moviesApi = {
                 // console.log("Click the link: "+videoLink);
                 cb([videoLink]);
             }).catch(function (response_youtube) {
+                if (response_youtube) console.log(response_youtube);
             });
     }
 

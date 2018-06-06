@@ -3,6 +3,7 @@
       <div class="movies" v-for="movie in json" :key="movie.Title">
         <img class="posters" style="cursor: pointer" :src="movie.Poster"
          :alt="movie.Title" @dblclick.prevent="getCharacters($event)"/>
+         <img :src="youtubeIcon" class="play play-inactive" @click="getTrailer($event)" :data-title="movie.Title"/>
       </div>
     </div>
 </template>
@@ -16,6 +17,7 @@ export default {
   data() {
     return {
       json: [],
+      youtubeIcon: youtubeIcon,
     };
   },
   mounted() {
@@ -54,17 +56,14 @@ export default {
       if (document.getElementsByClassName('highlighted').length > 0) {
         document.getElementsByClassName('highlighted').item(0).classList.remove('highlighted');
       }
-      if (document.getElementsByClassName('play').length > 0) {
-        document.getElementsByClassName('play').item(0).remove();
-      }
       event.currentTarget.classList.add('highlighted');
-      const element = document.createElement('img');
-      element.setAttribute('src', youtubeIcon);
-      element.style.width = '45px';
-      element.style.marginTop = '10px';
-      element.style.marginLeft = '130px';
-      element.classList.add('play');
-      event.currentTarget.parentElement.appendChild(element);
+      if (document.querySelectorAll('.play-active').length > 0) {
+        document.querySelectorAll('.play-active').item(0).classList.remove('play-active');
+      }
+      event.currentTarget.parentElement.querySelector('.play').classList.add('play-active');
+    },
+    getTrailer(event) {
+        fetch(`/api/movieTrailer/${event.currentTarget.dataset.title}`).then(res => res.json()).then(res => console.log(res));
     },
   },
 };
@@ -75,5 +74,15 @@ export default {
   border-style: solid;
   border-color: aliceblue;
   text-align: center;
+}
+.play-inactive {
+  visibility: hidden;
+}
+.play-active {
+  visibility: visible;
+  cursor: pointer;
+  width: 45px;
+  margin-top: 10px;
+  margin-left: 130px;
 }
 </style>
