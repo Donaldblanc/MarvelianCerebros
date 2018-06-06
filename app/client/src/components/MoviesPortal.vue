@@ -53,8 +53,8 @@ export default {
     },
     getCharacters(event) {
       eventBus.$emit('movieSelected', event.currentTarget.getAttribute('alt'));
-      if (document.getElementsByClassName('highlighted').length > 0) {
-        document.getElementsByClassName('highlighted').item(0).classList.remove('highlighted');
+      if (document.getElementsByClassName('highlighted posters').length > 0) {
+        document.getElementsByClassName('highlighted posters').item(0).classList.remove('highlighted');
       }
       event.currentTarget.classList.add('highlighted');
       if (document.querySelectorAll('.play-active').length > 0) {
@@ -63,18 +63,13 @@ export default {
       event.currentTarget.parentElement.querySelector('.play').classList.add('play-active');
     },
     getTrailer(event) {
-        fetch(`/api/movieTrailer/${event.currentTarget.dataset.title}`).then(res => res.json()).then(res => console.log(res));
+        fetch(`/api/movieTrailer/${event.currentTarget.dataset.title}`).then(res => res.json()).then(res => eventBus.$emit('openModal', res));
     },
   },
 };
 </script>
 
 <style>
-.highlighted {
-  border-style: solid;
-  border-color: aliceblue;
-  text-align: center;
-}
 .play-inactive {
   visibility: hidden;
 }

@@ -55,6 +55,6 @@ export default {
    text-align: center;
    font-family: 'Open Sans', sans-serif;
    font-size: 30px;
-   opacity: 0.3;
+   opacity: 0;
  }
 </style>
