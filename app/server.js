@@ -23,7 +23,7 @@ io.on('connection', (socket) => {
 })
 
 //route handlers
-apiRoutes(app);
+apiRoutes(app, io);
 
 http.listen(PORT, () =>{ 
     console.log(`Server listening on: http://localhost:${PORT} `);

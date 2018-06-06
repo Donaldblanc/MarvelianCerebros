@@ -44,6 +44,48 @@ var orm = {
       cb(result);
     });
   },
+  allCharacters: function(colName,table,movieCol,movieName,cb){
+    var queryString = "SELECT " + colName;
+    queryString += " FROM "+table;
+    queryString += " WHERE "+movieCol;
+    queryString += " = "+"'"+movieName+"'"+";";
+    // console.log(queryString);
+    connection.query(queryString, function (err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
+    allChatMessages: function ( colName, col2Name, table, cb){
+      let queryString = "SELECT " + colName + ","+ col2Name;
+      queryString += " FROM " + table; 
+
+      connection.query(queryString, function (err, result) {
+        if (err) {
+          throw err;
+        }
+        
+        cb(result);
+      });
+    },
+
+    postComments : function (username, comment, cb){
+
+        let queryString =  ` INSERT into usersBlog  ( user,  comments  ) VALUES ( 
+          '${username}' , '${comment}' );
+        `
+        connection.query(queryString, function (err, result) {
+          if (err) {
+            throw err;
+          }
+          
+          cb(result);
+        });
+
+    },
+
+
   all: function (tableInput, mm) {
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function (err, result) {

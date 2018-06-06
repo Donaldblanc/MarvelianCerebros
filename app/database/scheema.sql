@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS marvel_db;
+
 CREATE DATABASE marvel_db;
 
 USE marvel_db;
@@ -10,8 +12,9 @@ CREATE TABLE usersBlog(
     PRIMARY KEY (id)
 );
 
-CREATE TABLE table2(
+CREATE TABLE movieCharacters(
+    id int NOT NULL AUTO_INCREMENT,
     movies VARCHAR(255),
-    figures VARCHAR(255),
-    PRIMARY KEY (movies)
+    characters VARCHAR(255),
+    primary key(id)
 );
