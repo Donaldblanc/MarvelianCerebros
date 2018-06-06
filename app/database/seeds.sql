@@ -190,3 +190,12 @@ INSERT INTO movieCharacters (movies,characters) VALUES ("Black Panther","T'Chall
 -- Thor: Ragnarok:
 INSERT INTO movieCharacters (movies,characters) VALUES ("Black Panther","Loki"), ("Black Panther","Grandmaster"), ("Black Panther","Odin"), ("Black Panther","Korg"), ("Black Panther","Doctor Strange"),
 ("Black Panther", "Bruce Banner"), ("Black Panther","Stephen Strange");
+
+
+INSERT into usersBlog  ( user, blog, comments  )VALUES ( "John Doe",  " Blog: I hate when you write lots of notes and still don’t have a draft. Try looking at it another way though, Jeff. Count how much writing you have done. I bet you have alot of words already down. Since your notes are all in Word, you can use the word
+count command under the Tools menu. Instead of thinking about what you haven’t written, look at how much you HAVE written :-)  " ,  " This is a Sample Comment: This comment is cool"  );
+
+INSERT into usersBlog  ( user,  comments  ) VALUES ( " Michael Jordan", "The greatest Basketball player of all time." );
+
+INSERT into usersBlog  ( user, blog, comments  )VALUES ( "Jane Doe",  " When we started our business 16 months ago we decided to use a blog as the central marketing tool for our business. We did it because we didn’t really have any money for advertising and we never really believed that attending networking events would work for us. We placed the blog at the center of our website and only had one commodity on our hands to make it a success….time. " ,  " This is my Second Comment from Jane"  );
+
