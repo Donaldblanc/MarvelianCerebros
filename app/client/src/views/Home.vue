@@ -54,13 +54,13 @@ export default {
   grid-column-end: 13;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 150px repeat(14, 1fr);
+  grid-template-rows: 150px repeat(16, 1fr);
   min-height: 0;
   min-width: 0;
   grid-gap: 10px;
 }
 #slider1 {
-  grid-column: 2 / 6;
+  grid-column: 5 / 9;
   grid-row: 2 / 4;
   min-width: 0;
 }
@@ -73,17 +73,17 @@ export default {
 }
 #mp {
   grid-column: 3 / 11;
-  grid-row: 7 / 10;
+  grid-row: 9 / 12;
   min-width: 0;
 }
 #cp {
   grid-column: 3 / 11;
-  grid-row: 11 / 13;
+  grid-row: 13 / 15;
   min-width: 0;
 }
 #comics-portal {
   grid-column: 3 / 11;
-  grid-row: 13 / 15;
+  grid-row: 15 / 17;
   min-width: 0;
 }
 .thumbnails {
@@ -100,12 +100,12 @@ export default {
 }
 #blurb {
   font-family: 'Open Sans', sans-serif;
-  grid-column: 8 / 11;
-  grid-row: 2 / 5;
+  grid-column: 3 / 11;
+  grid-row: 6 / 8;
   text-align: center;
 }
 #blurb > p {
-  text-align: right;
+  text-align: center;
 }
 .modal-mask {
   position: fixed;
@@ -170,10 +170,10 @@ export default {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
-@media (max-width: 1850px) {
+/* @media (max-width: 1850px) {
   #blurb{
     grid-column: 7 / 11;
     grid-row: 1 /3;
   }
-}
+} */
 </style>

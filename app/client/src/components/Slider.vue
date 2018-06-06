@@ -7,7 +7,7 @@
         <h1>{{ heroes[Math.abs(currentNumber) % heroes.length] }}</h1>
       </div>
     </transition>
-    <button>SEE THE COMIC</button>
+    <button @click="getComic(currentComic)">SEE THE COMICS</button>
     <span><a @click="prev" href='#'>&#8656;</a> | | <a @click="next" href='#'>&#8658;</a></span>
   </div>
 </template>
@@ -16,6 +16,7 @@
 import spiderman from '../assets/spiderman.png';
 import hulk from '../assets/hulk.png';
 import cap from '../assets/captain america.png';
+import eventBus from '@/main';
 
 export default {
   name: 'Slider',
@@ -23,6 +24,7 @@ export default {
     return {
       images: [spiderman, hulk, cap],
       heroes: ['Spiderman', 'Hulk', 'Captain America'],
+      comicID: [1009610, 1009167, 1009220],
       currentNumber: 0,
     };
   },
@@ -43,10 +45,16 @@ export default {
     prev() {
       this.currentNumber -= 1;
     },
+    getComic(id) {
+      eventBus.$emit('characterSelected', id);
+    },
   },
   computed: {
     currentImage() {
       return this.images[Math.abs(this.currentNumber) % this.images.length];
+    },
+    currentComic() {
+      return this.comicID[Math.abs(this.currentNumber) % this.comicID.length];
     },
   },
 };
@@ -77,6 +85,7 @@ button {
   border: none;
   padding: 5px;
   order: 3;
+  cursor: pointer;
 }
 span {
   order: 4;

@@ -19,7 +19,6 @@ export default {
   data() {
     return {
       characters: [],
-      slider: null,
     };
   },
   created() {

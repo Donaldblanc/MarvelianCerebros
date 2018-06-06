@@ -16,7 +16,6 @@ export default {
   data() {
     return {
       comics: [],
-      slider: null,
     };
   },
   created() {
@@ -25,7 +24,7 @@ export default {
         this.comics = res;
       });
     });
-    eventBus.$on('movieSelected', () => {
+    eventBus.$on(['movieSelected', 'characterSelected'], () => {
       document.querySelector('.gallery2').style.opacity = 1;
     });
   },
