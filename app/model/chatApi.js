@@ -1,4 +1,3 @@
-chatApi.js
 import controller from "../data/controller"
 
 let chatAPi = {

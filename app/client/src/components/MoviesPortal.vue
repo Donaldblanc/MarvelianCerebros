@@ -17,7 +17,7 @@ export default {
   data() {
     return {
       json: [],
-      youtubeIcon: youtubeIcon,
+      youtubeIcon,
     };
   },
   mounted() {
@@ -63,7 +63,7 @@ export default {
       event.currentTarget.parentElement.querySelector('.play').classList.add('play-active');
     },
     getTrailer(event) {
-        fetch(`/api/movieTrailer/${event.currentTarget.dataset.title}`).then(res => res.json()).then(res => eventBus.$emit('openModal', res));
+      fetch(`/api/movieTrailer/${event.currentTarget.dataset.title}`).then(res => res.json()).then(res => eventBus.$emit('openModal', res));
     },
   },
 };
