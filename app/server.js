@@ -23,6 +23,7 @@ app.use(bodyParser.json());
 //route handlers
 apiRoutes(app, io);
 app.use(history());
+app.use(express.static(path.join(__dirname, 'client/dist')));
 
 app.listen(PORT, () =>{ 
     console.log(`Server listening on: http://localhost:${PORT} `);
