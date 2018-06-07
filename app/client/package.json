@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "array-flatten": "^2.1.1",
     "jquery": "^1.12.4",
     "pug": "^2.0.3",
     "pug-loader": "^2.4.0",

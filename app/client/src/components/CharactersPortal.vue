@@ -3,9 +3,9 @@
     <p v-if="characters.length === 0">Pick a movie</p>
     <div v-for="character in characters" :key="characters.indexOf(character)">
       <img class="thumbnails" style="cursor: pointer"
-      :src="character[0].thumbnail.path + '.' + character[0].thumbnail.extension"
-      :alt="character[0].name" :data-id="character[0].id" @dblclick="getComics($event)"/>
-      <p class="character-name">{{ character[0].name }}</p>
+      :src="character.thumbnail.path + '.' + character.thumbnail.extension"
+      :alt="character.name" :data-id="character.id" @dblclick="getComics($event)"/>
+      <p class="character-name">{{ character.name }}</p>
     </div>
   </div>
 </template>
@@ -13,6 +13,7 @@
 <script>
 // eslint-disable-next-line
 import eventBus from '@/main';
+import flatten from 'array-flatten';
 
 export default {
   name: 'CharactersPortal',
@@ -23,8 +24,11 @@ export default {
   },
   created() {
     eventBus.$on('movieSelected', (movie) => {
+      if (document.getElementsByClassName('highlighted thumbnails').length > 0) {
+        document.getElementsByClassName('highlighted thumbnails').item(0).classList.remove('highlighted');
+      }
       fetch(`/api/movieCharacters/${movie}`).then(res => res.json()).then((res) => {
-        this.characters = res;
+        this.characters = Array.from(new Set(flatten(res)));
       });
     });
   },

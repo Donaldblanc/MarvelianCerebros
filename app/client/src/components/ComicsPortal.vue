@@ -27,6 +27,11 @@ export default {
     eventBus.$on(['movieSelected', 'characterSelected'], () => {
       document.querySelector('.gallery2').style.opacity = 1;
     });
+    eventBus.$on('movieSelected', () => {
+      while (this.comics.length > 0) {
+        this.comics.pop();
+      }
+    });
   },
   updated() {
     // eslint-disable-next-line
