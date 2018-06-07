@@ -1,7 +1,8 @@
 require("dotenv").config();
 import fetch from 'node-fetch';
-import marvelAPi from '../model/marvelApi'
-import moviesAPi from '../model/moviesApi'
+import marvelAPi from '../model/marvelApi';
+import moviesAPi from '../model/moviesApi';
+import chatAPi from '../model/chatApi';
 import Sequelize from 'sequelize';
 
 const sequelize = new Sequelize("marvel_db", "root", "Paganizonda1", { dialect: "mysql", host: '127.0.0.1', port: 3306 })
@@ -90,6 +91,22 @@ export default function (app) {
         moviesAPi.getTrailer(movieTitle, function (results) {
             response.json(results);
         });
+    });
+    app.get("/messages", (request, response) => {
+        // console.log("in the messages route");
+        chatAPi.getMessages(function (results) {
+            response.send(results);
+        });
+        //response.send(messages);
+    });
+    app.post('/messages', (req, res) => {
+        io.emit('message', req.body)
+        console.log(req.body.user)
+        chatAPi.postBlog(req.body.user, req.body.comments, function (results) {
+            console.log(results);
+            res.sendStatus(200);
+        });
+        //  messages.push(req.body)
     });
 
 }// export default 
