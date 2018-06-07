@@ -1,6 +1,9 @@
 <template>
   <div id="chat">
     <div id="messages"></div>
+    <input id="message" placeholder="write something"/>
+    <input id="name" placeholder="what's your name"/>
+    <button id="send">Send</button>
   </div>
 </template>
 
@@ -11,6 +14,7 @@ export default {
   },
   mounted() {
     const socket = io();
+
     $(() => {
       $('#send').click(() => {
         const message = { user: $('#name').val(), comments: $('#message').val() };

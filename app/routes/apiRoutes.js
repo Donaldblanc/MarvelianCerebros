@@ -7,7 +7,7 @@ import Sequelize from 'sequelize';
 
 const sequelize = new Sequelize("marvel_db", "root", "Paganizonda1", { dialect: "mysql", host: '127.0.0.1', port: 3306 })
 
-export default function (app) {
+export default function (app, io) {
 
     //first route taken once page is opened, function only gets a callback no query needed here
     // app.get("/api/movies", (request, response) => {
