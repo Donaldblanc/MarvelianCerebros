@@ -35,6 +35,21 @@ var controller = {
       // console.log(res);
       cb(res);
     })
+  },
+  getMessages: function (cb) {
+    orm.allChatMessages("user", "comments", "usersBlog", function (res) {
+      cb(res);
+    })
+
+  },
+  getBlogs: function (cb) {
+    // get the blogs in the table 
+
+  },
+  postComment: function (username, comment, cb) {
+    orm.postComments(username, comment, function (results) {
+      cb(results)
+    })
   }
 };
 

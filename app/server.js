@@ -9,13 +9,19 @@ import history from 'connect-history-api-fallback';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const http = require('http').Server(app)
+const io = require('socket.io')(http)
+
+io.on('connection', (socket) => {
+    console.log('a user connected')
+})
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //route handlers
-apiRoutes(app);
+apiRoutes(app, io);
 app.use(history());
 
 app.listen(PORT, () =>{ 
