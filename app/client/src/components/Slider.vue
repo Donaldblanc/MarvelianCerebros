@@ -13,10 +13,10 @@
 </template>
 
 <script>
+import eventBus from '@/main';
 import spiderman from '../assets/spiderman.png';
 import hulk from '../assets/hulk.png';
 import cap from '../assets/captain america.png';
-import eventBus from '@/main';
 
 export default {
   name: 'Slider',

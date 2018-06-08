@@ -4,7 +4,8 @@
       <div class="modal-wrapper" @click="$emit('close')">
         <div class="modal-container">
           <div class="modal-body">
-            <iframe width="560" height="315" :src="modalURL" frameborder="0" allowfullscreen></iframe>
+            <iframe width="560" height="315" :src="modalURL" frameborder="0"
+             allowfullscreen></iframe>
           </div>
 
           <div class="modal-footer">
