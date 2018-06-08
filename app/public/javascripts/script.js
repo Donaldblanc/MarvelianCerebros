@@ -23,6 +23,7 @@
     const btnLogin = document.getElementById('btnLogin');
     const btnSignUp = document.getElementById('btnSignUp');
     const btnLogout = document.getElementById('btnLogout');
+    const ubtn = document.getElementById('updateName');
 
     // Add login Event
 
@@ -37,6 +38,9 @@
 
     });
 
+    ubtn.addEventListener('click', e => {
+        updateDisplyName();
+    })
     btnSignUp.addEventListener('click', e => { 
 
         const email = txtEmail.value;
@@ -58,7 +62,9 @@
         if(firebaseUser){
             console.log(firebaseUser);
             alert(firebaseUser.email);
+            alert(firebaseUser.displayName);
             btnLogout.classList.remove('hide')
+
 
         }else{
             console.log("user not logged in");
@@ -67,6 +73,17 @@
         }
 
     });
+ function updateDisplyName(){
+    var user = firebase.auth().currentUser;
+    var person = prompt("Please enter your name");
+    user.updateProfile({
+        displayName: person
+      }).then(function() {
+        console.log(user);
+      }).catch(function(error) {
+        // An error happened.
+      });
 
+ }
 
 }());
