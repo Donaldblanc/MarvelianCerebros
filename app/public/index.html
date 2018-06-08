@@ -25,10 +25,12 @@
 </div>
 <script>
     var socket = io()
+
+    
     $(() => {
         $("#send").click(() => {
             var message = { user: $("#name").val(), comments: $("#message").val() }
-            postMessage(message)
+            postMesszage(message)
            // console.log("button working" + $("#name").val());
         })
         getMessages()
