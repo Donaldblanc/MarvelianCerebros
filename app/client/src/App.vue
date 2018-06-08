@@ -4,9 +4,7 @@
       <MC></MC>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <router-link to="/">Home</router-link>&nbsp;|&nbsp;<router-link to="chat">Chat</router-link>
     </div>
-    <transition name="fade" mode="out-in">
       <router-view></router-view>
-    </transition>
   </div>
 </template>
 
@@ -53,19 +51,4 @@ body {
 #nav a.router-link-exact-active {
   color: crimson;
 }
-
-/* .fade-enter {
-  opacity: 0;
-}
-
-.fade-enter-active {
-  transition: opacity 0.3s ease;
-}
-
-.fade-leave-active {
-  transition: opacity 0.3s ease;
-  opacity: 0;
-} */
-
-
 </style>

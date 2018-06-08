@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "array-flatten": "^2.1.1",
+    "firebase": "^5.0.4",
     "jquery": "^1.12.4",
     "pug": "^2.0.3",
     "pug-loader": "^2.4.0",
@@ -19,7 +20,8 @@
     "vue-moment": "^4.0.0-0",
     "vue-router": "^3.0.1",
     "vue-slick": "^1.1.12",
-    "vue-socket.io": "^2.1.1-b"
+    "vue-socket.io": "^2.1.1-b",
+    "vuefire": "^1.4.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-beta.11",
