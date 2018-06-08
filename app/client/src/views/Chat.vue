@@ -1,14 +1,17 @@
 <template>
   <div id="chat">
+    <div id="messages-wrapper">
     <div id="messages">
       <div class="message" v-for="message in messages" :key="message.user">
-        <h4>{{message.user}} </h4>
-        <p>{{message.comments}}</p>
+        <h4 class="users" style="margin: 0">{{message.user}}<span> {{ new Date() | moment("h:mm A") }}</span></h4>
+        <p class="comments" style="margin: 0">{{message.comments}}</p>
       </div>
     </div>
-    <input id="message" placeholder="write something"/>
-    <input id="name" placeholder="what's your name"/>
-    <button id="send" @click="postMessage">Send</button>
+    </div>
+    <div id="message-input-wrapper">
+      <textarea id="message-input" type="text" placeholder="Message chat" @keyup="postMessage($event)"/>
+    </div>
+    <input id="name" type="text" placeholder="Username"/>
   </div>
 </template>
 
@@ -35,15 +38,19 @@ export default {
     this.getMessages();
   },
   methods: {
-    postMessage() {
-      const message = { user: document.querySelector('#name').value, comments: document.querySelector('#message').value };
-      fetch('/messages', {
-        method: 'POST',
-        body: JSON.stringify(message),
-        headers: new Headers({
-          'Content-Type': 'application/json',
-        }),
-      }).catch(error => console.error('Error:', error));
+    postMessage(event) {
+      if (event.keyCode === 13) {
+        if (!event.shiftKey) {
+          const message = { user: document.querySelector('#name').value, comments: document.querySelector('#message-input').value };
+          fetch('/messages', {
+            method: 'POST',
+            body: JSON.stringify(message),
+            headers: new Headers({
+              'Content-Type': 'application/json',
+            }),
+          }).catch(error => console.error('Error:', error));
+        }
+      }
     },
     getMessages() {
       fetch('/messages')
@@ -72,15 +79,87 @@ export default {
   min-width: 0;
   grid-gap: 10px;
 }
-#messages {
-  grid-column: 2 / 12;
+#messages-wrapper {
+  grid-column: 3 / 12;
   grid-row: 2 / 7;
   overflow-y: scroll;
+  overflow: hidden;
+}
+#messages {
+  grid-column: 3 / 12;
+  grid-row: 2 / 7;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
   box-sizing: content-box;
-  padding-right: 15px;
+  padding-right: 17px;
+  box-sizing: content-box;
 }
 ::-webkit-scrollbar {
   display: none;
 }
-
+#message-input-wrapper {
+  grid-row: 7 / 8;
+  grid-column: 5 / 9;
+  overflow-y: scroll;
+  overflow: hidden;
+  max-height: 50px;
+  min-width: 494px;
+}
+#message-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: rgba(128, 128, 128, 0.267);
+  color: aliceblue;
+  resize: none;
+  box-sizing: content-box;
+  padding-right: 17px;
+  font-family: inherit;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    line-height: 50px;
+    font-size: 20px;
+}
+::-webkit-input-placeholder { /* Webkit */
+    line-height: 50px;
+    font-size: 20px;
+}
+#name {
+  grid-row: 7 / 8;
+  grid-column: 3 / 4;
+  width: 110px;
+  border: none;
+  background-color: rgba(128, 128, 128, 0.267);
+  color: aliceblue;
+  max-height: 50px;
+  font-size: 15px;
+}
+#send {
+  grid-row: 7 / 8;
+  grid-column: 9 / 10;
+  height: 30px;
+  border: none;
+  background-color: aliceblue;
+  height: 50%;
+}
+form {
+  grid-row: 7 / 8;
+  grid-column: 3 / 12;
+}
+.message {
+  border-top: 1px solid rgba(128, 128, 128, 0.267);
+}
+.message:hover {
+  background-color: rgba(128, 128, 128, 0.596);
+}
+.users {
+  box-sizing: border-box;
+  padding-top: 10px
+}
+.comments {
+  box-sizing: border-box;
+  padding-bottom: 10px;
+  white-space: pre-wrap;
+}
 </style>

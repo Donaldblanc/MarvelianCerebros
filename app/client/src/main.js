@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import socketio from 'socket.io-client';
 import VueSocketIO from 'vue-socket.io';
+import VueMoment from 'vue-moment';
 import App from './App.vue';
 import router from './router';
 
@@ -10,6 +11,7 @@ Vue.config.productionTip = false;
 export default eventBus;
 
 Vue.use(VueSocketIO, SocketInstance);
+Vue.use(VueMoment);
 
 new Vue({
   router,

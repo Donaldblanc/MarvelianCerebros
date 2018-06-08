@@ -4,10 +4,11 @@ import marvelAPi from '../model/marvelApi';
 import moviesAPi from '../model/moviesApi';
 import chatAPi from '../model/chatApi';
 import Sequelize from 'sequelize';
+import path from 'path';
 
 const sequelize = new Sequelize("marvel_db", "root", "Paganizonda1", { dialect: "mysql", host: '127.0.0.1', port: 3306 })
 
-export default function (app, io) {
+export default function (app, io, express) {
 
     //first route taken once page is opened, function only gets a callback no query needed here
     // app.get("/api/movies", (request, response) => {
@@ -23,6 +24,12 @@ export default function (app, io) {
     //         // console.log(results)
     //         response.json(results);
     //     });
+    // });
+    // app.get('/', (req, res) => {
+    //     console.log("in the / route");
+    //    // res.sendFile(path.resolve('/dist/index.html'));
+    //   response.app.use(express.static(path.join(__dirname, 'client/dist')))
+    //   // res.sendFile('app/client/dist/index.html');
     // });
 
     app.get("/api/comics/:comicId?", (request, response) => {

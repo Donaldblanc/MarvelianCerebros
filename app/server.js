@@ -21,11 +21,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //route handlers
-apiRoutes(app, io);
+apiRoutes(app, io, express);
 app.use(history());
 app.use(express.static(path.join(__dirname, 'client/dist')));
 
-app.listen(PORT, () =>{ 
+http.listen(PORT, () =>{ 
     console.log(`Server listening on: http://localhost:${PORT} `);
    
 });
