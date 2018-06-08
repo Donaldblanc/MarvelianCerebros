@@ -29,14 +29,16 @@ function objToSql(ob) {
   return arr.toString();
 }
 // Object for all our SQL statement functions.
+
+
 var orm = {
-  allMovies: function (colName,table,cb) {
-    var queryString = "SELECT " + colName+",";
+  allMovies: function (colName, table, cb) {
+    var queryString = "SELECT " + marvel_db.movie + ",";
     queryString += " COUNT(*) AS C FROM " + table;
     queryString += " GROUP BY " + colName;
     queryString += " HAVING C > 1";
     queryString += " ORDER BY C DESC";
-    console.log("\n"+queryString);
+    console.log("\n" + queryString);
     connection.query(queryString, function (err, result) {
       if (err) {
         throw err;
@@ -44,17 +46,38 @@ var orm = {
       cb(result);
     });
   },
-  allCharacters: function(colName,table,movieCol,movieName,cb){
-    var queryString = "SELECT " + colName;
-    queryString += " FROM "+table;
-    queryString += " WHERE "+movieCol;
-    queryString += " = "+"'"+movieName+"'"+";";
+  allCharacters: function (movies, cb) {
+
+    // select @id := id from movie where movies = "hulk";
+    // SELECT movie_character
+    // from characters
+    // left join movie
+    // on movie.id = characters.movieID
+    // where movieID = @id
+
+    let queryString = "SELECT @id:=id from movie where movies = '" + movies + "'; ";
+    // queryString += "SELECT movie_character from characters ";
+    //  queryString += "left join movie on movie.id = characters.movieID ";
+    // queryString += "where movieID = @id ;";
     // console.log(queryString);
     connection.query(queryString, function (err, result) {
       if (err) {
         throw err;
       }
-      cb(result);
+      var charID = Object.values(result[0]);
+      // console.log(charID[0]);
+      let queryString2 = "SELECT movie_character from characters ";
+      queryString2 += "left join movie on movie.id = characters.movieID ";
+      queryString2 += "where movieID = " + charID[0];
+      // console.log(queryString2)
+      connection.query(queryString2, function (err, result) {
+        if (err) {
+          throw err;
+        }
+        // console.log(result);
+        cb(result);
+      });
+      // cb(result);
     });
   },
   all: function (tableInput, mm) {
