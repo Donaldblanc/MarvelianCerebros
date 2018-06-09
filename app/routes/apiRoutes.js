@@ -1,7 +1,7 @@
 require("dotenv").config();
 import fetch from 'node-fetch';
 import marvelAPi from '../model/marvelApi';
-import moviesAPi from '../model/moviesApi';
+import moviesAPi from '../model/moviesAPI';
 import chatAPi from '../model/chatApi';
 import Sequelize from 'sequelize';
 import path from 'path';
