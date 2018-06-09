@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon ./app/server.js --exec babel-node -e",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devstart": "nodemon --ignore ./app/client/ ./app/server.js --exec babel-node -e"
   },
   "repository": {
     "type": "git",
@@ -22,11 +23,18 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
     "body-parser": "^1.18.3",
+    "connect-history-api-fallback": "^1.5.0",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "marvel": "^1.1.0",
     "mysql": "^2.15.0",
+    "mysql2": "^1.5.3",
+    "node-fetch": "^2.1.2",
+    "sequelize": "^4.37.10",
+    "socket.io": "^2.1.1"
+  },
+  "devDependencies": {
     "node-fetch": "^2.1.2",
     "nodemon": "^1.17.5"
   }
