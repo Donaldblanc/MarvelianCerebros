@@ -6,7 +6,7 @@ import chatAPi from '../model/chatApi';
 import Sequelize from 'sequelize';
 import path from 'path';
 
-const sequelize = new Sequelize("marvel_db", "root", "root", { dialect: "mysql", host: '127.0.0.1', port: 3306 })
+const sequelize = new Sequelize("marvel_db", "root", process.env.JAWSDB_URL ? process.env.JAWSDB_URL : 'root', { dialect: "mysql", host: '127.0.0.1', port: 3306 })
 
 export default function (app, io, express) {
 
