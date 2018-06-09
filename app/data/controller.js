@@ -31,7 +31,7 @@ var controller = {
     });
   },
   allCharacters: function (movie, cb) {
-    orm.allCharacters(movie, function (res) {
+    orm.allCharacters("characters", "marvel_db.movieCharacters", "movies", movie, function (res) {
       // console.log(res);
       cb(res);
     })

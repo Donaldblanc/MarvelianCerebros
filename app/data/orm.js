@@ -44,24 +44,17 @@ var orm = {
       cb(result);
     });
   },
-  allCharacters: function (movies, cb) {
-    let queryString = "SELECT @id:=id from movie where movies = '" + movies + "'; ";
+  allCharacters: function(colName,table,movieCol,movieName,cb){
+    var queryString = "SELECT " + colName;
+    queryString += " FROM "+table;
+    queryString += " WHERE "+movieCol;
+    queryString += " = "+"'"+movieName+"'"+";";
+    console.log(queryString);
     connection.query(queryString, function (err, result) {
       if (err) {
         throw err;
       }
-      var charID = Object.values(result[0]);
-      let queryString2 = "SELECT movie_character from characters ";
-      queryString2 += "left join movie on movie.id = characters.movieID ";
-      queryString2 += "where movieID = " + charID[0];
-      connection.query(queryString2, function (err, result) {
-        if (err) {
-          throw err;
-        }
-        // console.log(result);
-        cb(result);
-      });
-      // cb(result);
+      cb(result);
     });
   },
   all: function (tableInput, mm) {

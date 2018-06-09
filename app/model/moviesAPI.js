@@ -1,4 +1,3 @@
-
 import fetch from 'node-fetch';
 import marvelAPi from '../model/marvelApi'
 
@@ -40,23 +39,20 @@ let moviesApi = {
             // console.log(result);
             for (let i = 0; i < result.length; i++) {
                 // let movieName = "Spider-Man"
-                let characterName = result[i].movie_character.toString();
-                // console.log(characterName);
-         
+                let characterName = result[i].characters.toString();
 
-                marvelAPi.character(characterName, function (res){
+                marvelAPi.character(characterName, function (res) {
+
                     // console.log(res);
                     // cb(resp)
                     charactersID.push(res)
                     if (result.length === charactersID.length) {
-                        // console.log(charactersID);
                         cb(charactersID);
                     }
                 })
 
             }
         })
-
     },
     getTrailer: function (movieTitle, cb) {
         var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=" + movieTitle + "trailer&key=AIzaSyC8th4wDxjLmTn1fONnkSMaUaGAGTUNQRA";
