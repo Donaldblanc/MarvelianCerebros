@@ -13,16 +13,16 @@ export const SocketInstance = socketio('http://localhost:3000');
 Vue.config.productionTip = false;
 export default eventBus;
 
-const config = {
-  apiKey: "AIzaSyDI0QzEY--AmU8EYqeBHdBWEOHauJhrCyc",
-  authDomain: "marvelliancerebros2.firebaseapp.com",
-  databaseURL: "https://marvelliancerebros2.firebaseio.com",
-  projectId: "marvelliancerebros2",
-  storageBucket: "",
-  messagingSenderId: "115106650682",
-};
+// const config = {
+//   apiKey: "AIzaSyDI0QzEY--AmU8EYqeBHdBWEOHauJhrCyc",
+//   authDomain: "marvelliancerebros2.firebaseapp.com",
+//   databaseURL: "https://marvelliancerebros2.firebaseio.com",
+//   projectId: "marvelliancerebros2",
+//   storageBucket: "",
+//   messagingSenderId: "115106650682",
+// };
 
-Firebase.initializeApp(config);
+// Firebase.initializeApp(config);
 
 Vue.use(VueSocketIO, SocketInstance);
 Vue.use(VueMoment);

@@ -1,7 +1,7 @@
 <template>
   <transition name="modal">
     <div class="modal-mask">
-      <div class="modal-wrapper" @click="$emit('close')">
+      <div class="modal-wrapper">
         <div class="modal-container">
           <div class="modal-body">
           <div class="modal-header">
@@ -11,10 +11,10 @@
             </button>
             </slot>
           </div>
-            <input id="txtEmail">
-            <input id="txtPassword">
+            <input id="txtEmail" v-model="txtEmail">
+            <input id="txtPassword" v-model="txtPassword">
             <button id="btnLogin" @click="login">Login</button>
-            <button id="btnSignUp">Sign Up</button>
+            <button id="btnSignUp" @click="signup">Sign Up</button>
           <div class="modal-footer">
             <slot name="footer">
             </slot>
@@ -29,9 +29,38 @@
 <script>
 import Firebase from 'firebase';
 
+
 export default {
   name: 'AuthModal',
-}
+  data() {
+    return {
+      txtEmail: '',
+      txtPassword: '',
+    };
+  },
+  methods: {
+    login() {
+      Firebase.auth().signInWithEmailAndPassword(this.txtEmail, this.txtPassword).then(
+        (user) => {
+          alert('Logged in');
+        },
+        (err) => {
+          alert('Oops' + err.message);
+        }
+      );
+    },
+    signup() {
+      Firebase.auth().createUserWithEmailAndPassword(this.txtEmail, this.txtPassword).then(
+        (user) => {
+          alert('Account created');
+        },
+        (err) => {
+          alert('Oops' + err.message);
+        }
+      );
+    },
+  },
+};
 </script>
 
 <style>

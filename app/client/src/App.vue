@@ -4,6 +4,7 @@
       <MC></MC>
         <router-link to="/" id="home-link">Home</router-link><router-link to="chat" id="chat-link">Chat</router-link>
         <button id="btnLoginSignUp" @click="openAuthModal">Login or Sign Up</button>
+        <button id="btnLogout" class="hide" @click="logout">Log Out</button>
     </div>
     <AuthModal v-if="showAuthModal" @close="showAuthModal = false"></AuthModal>
       <router-view></router-view>
@@ -15,6 +16,33 @@ import MC from '@/components/MC.vue';
 import Firebase from 'firebase';
 import AuthModal from '@/components/AuthModal.vue';
 import eventBus from '@/main';
+
+const config = {
+  apiKey: "AIzaSyDI0QzEY--AmU8EYqeBHdBWEOHauJhrCyc",
+  authDomain: "marvelliancerebros2.firebaseapp.com",
+  databaseURL: "https://marvelliancerebros2.firebaseio.com",
+  projectId: "marvelliancerebros2",
+  storageBucket: "",
+  messagingSenderId: "115106650682",
+};
+
+Firebase.initializeApp(config);
+
+// Firebase.auth().onAuthStateChanged(firebaseUser => {
+//         if(firebaseUser){
+//             console.log(firebaseUser);
+//             alert(firebaseUser.email);
+//             alert(firebaseUser.displayName);
+//             btnLogout.classList.remove('hide')
+
+
+//         }else{
+//             console.log("user not logged in");
+//             alert("user not logged in");
+//             btnLogout.classList.add('hide');
+//         }
+
+// });
 
 export default {
   name: 'App',
@@ -28,6 +56,17 @@ export default {
     eventBus.$on('openAuthModal', () => {
       this.showAuthModal = true;
     });
+
+    Firebase.auth().onAuthStateChanged(firebaseUser => {
+      if (firebaseUser) {
+        alert(firebaseUser.email + firebaseUser.displayName);
+        document.querySelector('#btnLogout').classList.remove('hide');
+      } else {
+        alert("user not logged in");
+        document.querySelector('#btnLogout').classList.add('hide');
+      }
+    })
+
   },
   components: {
     MC,
@@ -36,6 +75,9 @@ export default {
   methods: {
     openAuthModal() {
       eventBus.$emit('openAuthModal', true);
+    },
+    logout() {
+      Firebase.auth().signOut();
     },
   },
 };
