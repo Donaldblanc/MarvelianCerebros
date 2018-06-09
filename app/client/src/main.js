@@ -9,7 +9,7 @@ import App from './App.vue';
 import router from './router';
 
 const eventBus = new Vue();
-export const SocketInstance = socketio('http://localhost:3000');
+export const SocketInstance = socketio(process.env.SOCKET);
 Vue.config.productionTip = false;
 export default eventBus;
 
