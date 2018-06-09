@@ -6,7 +6,7 @@ import chatAPi from '../model/chatApi';
 import Sequelize from 'sequelize';
 import path from 'path';
 
-let sequelize;
+var sequelize;
 if (process.env.JAWSDB_URL) {
     sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
