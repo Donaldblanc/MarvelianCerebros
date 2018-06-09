@@ -17,7 +17,6 @@ import eventBus from '@/main';
 import spiderman from '../assets/spiderman.png';
 import hulk from '../assets/hulk.png';
 import cap from '../assets/captain america.png';
-
 export default {
   name: 'Slider',
   data() {
@@ -67,6 +66,7 @@ img {
 }
 h1 {
   order: 2;
+  text-align: center;
 }
 div {
   display: flex;
