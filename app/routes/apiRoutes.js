@@ -52,7 +52,7 @@ export default function (app, io, express) {
     });
     app.get('/api/movies', (req, res) => {
         const movieInfo = [];
-        sequelize.query("SELECT movies, COUNT(*) AS C FROM marvel_db.movieCharacters GROUP BY movies HAVING C > 1 ORDER BY C DESC", { type: Sequelize.QueryTypes.SELECT }).then(result => {
+        sequelize.query("SELECT movies, COUNT(*) AS C FROM movieCharacters GROUP BY movies HAVING C > 1 ORDER BY C DESC", { type: Sequelize.QueryTypes.SELECT }).then(result => {
             for (let i = 0; i < result.length; i++) {
                 // let movieName = "Spider-Man"
                 let movieName = result[i].movies.toString();
@@ -74,7 +74,7 @@ export default function (app, io, express) {
     app.get('/api/movieCharacters/:movie', (req, res) => {
         const charactersID = [];
         let movieChar = req.params.movie;
-        const q = `SELECT characters FROM marvel_db.movieCharacters WHERE movies = '${movieChar}';`;
+        const q = `SELECT characters FROM movieCharacters WHERE movies = '${movieChar}';`;
         sequelize.query(q, { type: Sequelize.QueryTypes.SELECT }).then(result => {
             for (let i = 0; i < result.length; i++) {
                 // let movieName = "Spider-Man"

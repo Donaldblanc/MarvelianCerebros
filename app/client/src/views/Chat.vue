@@ -1,7 +1,7 @@
 <template>
   <div id="chat">
     <div id="messages-wrapper">
-    <div id="messages">
+    <div id="messages" ref="messages">
       <div class="message" v-for="message in messages" :key="message.user">
         <h4 class="users" style="margin: 0">{{message.user}}<span> {{ new Date() | moment("h:mm A") }}</span></h4>
         <p class="comments" style="margin: 0">{{message.comments}}</p>
@@ -11,11 +11,12 @@
     <div id="message-input-wrapper">
       <textarea id="message-input" type="text" placeholder="Message chat" @keyup="postMessage($event)"/>
     </div>
-    <input id="name" type="text" placeholder="Username"/>
   </div>
 </template>
 
 <script>
+import Firebase from 'firebase';
+
 export default {
   data() {
     return {
@@ -37,11 +38,20 @@ export default {
   mounted() {
     this.getMessages();
   },
+  updated() {
+    this.$refs.messages.scrollTop = this.$refs.messages.lastElementChild.offsetTop;
+  },
   methods: {
     postMessage(event) {
       if (event.keyCode === 13) {
         if (!event.shiftKey) {
-          const message = { user: document.querySelector('#name').value, comments: document.querySelector('#message-input').value };
+          let name;
+          if (Firebase.auth().currentUser.displayName) {
+            name = Firebase.auth().currentUser.displayName
+          } else {
+            name = 'Anonymous'
+          }
+          const message = { user: name, comments: document.querySelector('#message-input').value };
           fetch('/messages', {
             method: 'POST',
             body: JSON.stringify(message),
@@ -49,6 +59,11 @@ export default {
               'Content-Type': 'application/json',
             }),
           }).catch(error => console.error('Error:', error));
+          event.currentTarget.value = '';
+          const messages = document.querySelector('#messages');
+          this.$nextTick(() => {
+            this.$refs.messages.scrollTop = this.$refs.messages.lastElementChild.offsetTop;
+        });
         }
       }
     },
@@ -124,16 +139,6 @@ export default {
 ::-webkit-input-placeholder { /* Webkit */
     line-height: 50px;
     font-size: 20px;
-}
-#name {
-  grid-row: 7 / 8;
-  grid-column: 3 / 4;
-  width: 110px;
-  border: none;
-  background-color: rgba(128, 128, 128, 0.267);
-  color: aliceblue;
-  max-height: 50px;
-  font-size: 15px;
 }
 #send {
   grid-row: 7 / 8;

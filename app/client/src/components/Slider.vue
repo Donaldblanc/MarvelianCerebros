@@ -67,6 +67,7 @@ img {
 }
 h1 {
   order: 2;
+  text-align: center;
 }
 div {
   display: flex;

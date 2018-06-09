@@ -3,7 +3,8 @@
     <div id="nav">
       <MC></MC>
         <router-link to="/" id="home-link">Home</router-link><router-link to="chat" id="chat-link">Chat</router-link>
-        <button id="btnLoginSignUp" @click="openAuthModal">Login or Sign Up</button>
+        <span id="displayName">{{displayName}}</span>
+        <button id="btnLoginSignUp" class="" @click="openAuthModal">Login or Sign Up</button>
         <button id="btnLogout" class="hide" @click="logout">Log Out</button>
     </div>
     <AuthModal v-if="showAuthModal" @close="showAuthModal = false"></AuthModal>
@@ -50,6 +51,8 @@ export default {
     return {
       loggedInStatus: false,
       showAuthModal: false,
+      email: '',
+      displayName: '',
     };
   },
   created() {
@@ -59,11 +62,15 @@ export default {
 
     Firebase.auth().onAuthStateChanged(firebaseUser => {
       if (firebaseUser) {
-        alert(firebaseUser.email + firebaseUser.displayName);
+        this.email = firebaseUser.email;
+        this.displayName = firebaseUser.displayName;
         document.querySelector('#btnLogout').classList.remove('hide');
+        document.querySelector('#btnLoginSignUp').classList.add('hide');
       } else {
-        alert("user not logged in");
+        this.email = '';
+        this.displayName = '';
         document.querySelector('#btnLogout').classList.add('hide');
+        document.querySelector('#btnLoginSignUp').classList.remove('hide');
       }
     })
 
@@ -129,12 +136,26 @@ body {
 }
 #btnLoginSignUp {
   grid-row: 1 / 2;
-  grid-column: 9 / 13;
+  grid-column: 10 / 13;
+  border: none;
+  background-color: inherit;
+  color: aliceblue;
+  cursor: pointer;
 }
 #btnLogout {
   grid-row: 1 / 2;
-  grid-column: 9 / 10;
+  grid-column: 8 / 10;
   z-index: 2;
+  background-color: inherit;
+  border: none;
+  color: aliceblue;
+  cursor: pointer;
+}
+#displayName {
+  grid-row: 1 / 2;
+  grid-column: 5 / 6;
+  align-self: center;
+  justify-self: right;
 }
 .hide {
  display: none;
