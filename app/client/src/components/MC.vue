@@ -16,6 +16,7 @@ h1 {
   color: crimson;
   margin-top: 0px;
   margin-bottom: 0px;
+  width: 393px;
 }
 span#cerebros {
   font-family: "Bowlby One SC", cursive;
