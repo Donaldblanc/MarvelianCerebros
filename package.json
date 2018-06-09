@@ -4,7 +4,7 @@
   "description": "Project 2 the expansion of project 1",
   "main": "server.js",
   "scripts": {
-    "start": "node ./app/server.js --exec babel-node -e",
+    "start": "nodemon ./app/server.js --exec babel-node -e",
     "test": "echo \"Error: no test specified\" && exit 1",
     "devstart": "nodemon --ignore ./app/client/ ./app/server.js --exec babel-node -e"
   },
