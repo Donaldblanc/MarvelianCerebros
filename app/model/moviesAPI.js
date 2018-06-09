@@ -24,6 +24,7 @@ let moviesApi = {
                     .then(function (response) {
 
                         movieInfo.push(response);
+                        movieInfo.push(response.Poster);
                         if (movieInfo.length === result.length) {
                             cb(movieInfo)
                         }
@@ -42,6 +43,7 @@ let moviesApi = {
                 let characterName = result[i].characters.toString();
 
                 marvelAPi.character(characterName, function (res) {
+
                     // console.log(res);
                     // cb(resp)
                     charactersID.push(res)
@@ -52,7 +54,6 @@ let moviesApi = {
 
             }
         })
-
     },
     getTrailer: function (movieTitle, cb) {
         var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&q=" + movieTitle + "trailer&key=AIzaSyC8th4wDxjLmTn1fONnkSMaUaGAGTUNQRA";

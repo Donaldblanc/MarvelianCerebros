@@ -25,6 +25,11 @@ INSERT INTO movieCharacters (movies,characters) VALUES ("Blade II","Whistler"),(
 INSERT INTO movieCharacters (movies,characters) VALUES ("Spider-Man","Mary Jane Watson"),("Spider-Man", "Peter Parker"),("Spider-Man", "Harry Osborn"), 
 ("Spider-Man","Ben Parker"), ("Spider-Man","J. Jonah Jameson"), ("Spider-Man","Betty Brant"),("Spider-Man","Spider-Man"),
 ("Spider-Man", "Norman Osborn"), ("Spider-Man","May Parker");
+-- Spider-man:
+
+INSERT INTO movieCharacters (movies,characters) VALUES ("Spider-man","Mary Jane Watson"),("Spider-man", "Peter Parker"),("Spider-man", "Harry Osborn"), 
+("Spider-man","Ben Parker"), ("Spider-man","J. Jonah Jameson"), ("Spider-man","Betty Brant"),("Spider-man","Spider-Man"),
+("Spider-man", "Norman Osborn"), ("Spider-man","May Parker");
 
 -- Daredevil:
 INSERT INTO movieCharacters (movies,characters) VALUES ("Daredevil", "Daredevil"),("Daredevil", "Matt Murdock"),("Daredevil", "Elektra Natchios"),("Daredevil","Bullseye"),
@@ -34,6 +39,11 @@ INSERT INTO movieCharacters (movies,characters) VALUES ("Daredevil", "Daredevil"
 INSERT INTO movieCharacters (movies,characters) VALUES ("Spider-Man 2","Peter Parker"),("Spider-Man 2" ,"Mary Jane Watson"),("Spider-Man 2","Harry Osborn"),
 ("Spider-Man 2" ,"J. Jonah Jameson"), ("Spider-Man 2","May Parker"), 
 ("Spider-Man 2", "Norman Osborn"), ("Spider-Man 2","Doctor Octopus"), ("Spider-Man 2","Spider-Man");
+
+-- Spider-man 2:
+INSERT INTO movieCharacters (movies,characters) VALUES ("Spider-man 2","Peter Parker"),("Spider-man 2" ,"Mary Jane Watson"),("Spider-man 2","Harry Osborn"),
+("Spider-man 2" ,"J. Jonah Jameson"), ("Spider-man 2","May Parker"), 
+("Spider-man 2", "Norman Osborn"), ("Spider-man 2","Doctor Octopus"), ("Spider-man 2","Spider-Man");
 
 -- Blade: Trinity:
 INSERT INTO movieCharacters (movies,characters) VALUES ("Blade: Trinity","Whistler"), ("Blade: Trinity","Blade"), ("Blade: Trinity","Hannibal King");
@@ -64,10 +74,16 @@ INSERT INTO movieCharacters (movies,characters) VALUES ("Spider-Man 3","Peter Pa
 ("Spider-Man 3", "May Parker"), ("Spider-Man 3","J. Jonah Jameson"), ("Spider-Man 3","Eddie Brock"),("Spider-Man 3", "Sandman"),
 ("Spider-Man 3", "Eddie Brock"), ("Spider-Man 3","Harry Osborn"), ("Spider-Man 3","New Goblin"), ("Spider-Man 3","Spider-Man");
 
+
 -- X-Men Origins: Wolverine:
 INSERT INTO movieCharacters (movies,characters) VALUES ("X-Men Origins: Wolverine","Logan"), ("X-Men Origins: Wolverine","John Wraith"),  ("X-Men Origins: Wolverine","Cyclops"),
 ("X-Men Origins: Wolverine", "Agent Zero"), ("X-Men Origins: Wolverine","Blob"), ("X-Men Origins: Wolverine","John Wraith"), ("X-Men Origins: Wolverine","Sabretooth"), ("X-Men Origins: Wolverine","Silver Fox"), 
 ("X-Men Origins: Wolverine","Weapon X"), ("X-Men Origins: Wolverine","Wolverine"), ("X-Men Origins: Wolverine","Deadpool");
+
+-- X-Men Origins:
+INSERT INTO movieCharacters (movies,characters) VALUES ("X-Men Origins","Logan"), ("X-Men Origins","John Wraith"),  ("X-Men Origins","Cyclops"),
+("X-Men Origins", "Agent Zero"), ("X-Men Origins","Blob"), ("X-Men Origins","John Wraith"), ("X-Men Origins","Sabretooth"), ("X-Men Origins","Silver Fox"), 
+("X-Men Origins","Weapon X"), ("X-Men Origins","Wolverine"), ("X-Men Origins","Deadpool");
 
 -- X-Men: First Class:
 INSERT INTO movieCharacters (movies,characters) VALUES ("X-Men: First Class","Charles Xavier"),("X-Men: First Class", "Sebastian Shaw"), ("X-Men: First Class","Moira MacTaggert"),
@@ -87,9 +103,14 @@ INSERT INTO movieCharacters (movies,characters) VALUES ("Iron Man 2","Tony Stark
 ("Iron Man 2", "Black Widow"), ("Iron Man 2","Natasha Romanoff"), ("Iron Man 2","Iron Man");
 
 -- Avengers:
+
 INSERT INTO movieCharacters (movies,characters) VALUES ("The Avengers","Tony Stark"), ("The Avengers","Steve Rogers"), ("The Avengers","Bruce Banner"),
 ("The Avengers", "Clint Barton"), ("The Avengers","Loki"), ("The Avengers","Nick Fury"), ("The Avengers","Clint Barton"), ("The Avengers","Natasha Romanoff"), ("The Avengers","Black Widow"),
 ("The Avengers","Bruce Banner"), ("The Avengers","Captain America"), ("The Avengers","Steve Rogers"), ("The Avengers","Iron Man"), ("The Avengers","Hawkeye");
+
+INSERT INTO movieCharacters (movies,characters) VALUES ("Avengers","Tony Stark"), ("Avengers","Steve Rogers"), ("Avengers","Bruce Banner"),
+("Avengers", "Clint Barton"), ("Avengers","Loki"), ("Avengers","Nick Fury"), ("Avengers","Clint Barton"), ("Avengers","Natasha Romanoff"), ("Avengers","Black Widow"),
+("Avengers","Bruce Banner"), ("Avengers","Captain America"), ("Avengers","Steve Rogers"), ("Avengers","Iron Man"), ("Avengers","Hawkeye");
 
 -- Ghost Rider: Spirit of Vengeance:
 INSERT INTO movieCharacters (movies,characters) VALUES ("Ghost Rider: Spirit of Vengeance","Johnny Blaze"), ("Ghost Rider: Spirit of Vengeance","Johnny Blaze"),
@@ -100,6 +121,12 @@ INSERT INTO movieCharacters (movies,characters) VALUES ("Fantastic 4: Rise of th
 ("Fantastic 4: Rise of the Silver Surfer", "Victor Von Doom"), ("Fantastic 4: Rise of the Silver Surfer","Alicia Masters"), ("Fantastic 4: Rise of the Silver Surfer","Norrin Radd"), ("Fantastic 4: Rise of the Silver Surfer","Doctor Doom"),
 ("Fantastic 4: Rise of the Silver Surfer","Ben Grimm"),("Fantastic 4: Rise of the Silver Surfer", "Human Torch"), ("Fantastic 4: Rise of the Silver Surfer","Johnny Storm"),
 ("Fantastic 4: Rise of the Silver Surfer", "Invisible Woman"), ("Fantastic 4: Rise of the Silver Surfer","Mr. Fantastic"), ("Fantastic 4: Rise of the Silver Surfer","Silver Surfer");
+
+-- Rise of the Silver Surfer:
+INSERT INTO movieCharacters (movies,characters) VALUES ("Rise of the Silver Surfer","Johnny Storm"), ("Rise of the Silver Surfer","Norrin Radd"),( "Rise of the Silver Surfer","Ben Grimm"),
+("Rise of the Silver Surfer", "Victor Von Doom"), ("Rise of the Silver Surfer","Alicia Masters"), ("Rise of the Silver Surfer","Norrin Radd"), ("Rise of the Silver Surfer","Doctor Doom"),
+("Rise of the Silver Surfer","Ben Grimm"),("Rise of the Silver Surfer", "Human Torch"), ("Rise of the Silver Surfer","Johnny Storm"),
+("Rise of the Silver Surfer", "Invisible Woman"), ("Rise of the Silver Surfer","Mr. Fantastic"), ("Rise of the Silver Surfer","Silver Surfer");
 
 -- The Incredible Hulk:
 INSERT INTO movieCharacters (movies,characters) VALUES ("The Incredible Hulk","Bruce Banner"), ("The Incredible Hulk","Betty Ross"),
